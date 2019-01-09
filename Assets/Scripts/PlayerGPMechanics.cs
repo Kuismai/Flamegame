@@ -17,6 +17,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
     public static float playerHealth = 100f;
     public static float playerResource = 0f;
+    public static float maxResource = 100f;
     public static bool playerDead = false;
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
@@ -74,7 +75,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
             if (playerHealth < hpThreshold) // If player health drops below Threshold, we keep checking if player is dead (player health at or below Zero) 
             {
-                if (playerHealth <= 0 && playerResource > 0)
+                if (playerHealth <= 0)
                 {
                     playerDead = true;
                     Debug.Log("Your fire went out. Ripperoni pepperoni.");
@@ -90,7 +91,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
                     drainTimer = 0;
 
-                    Debug.Log("Drained " + resourceDrain + " resource to restore health");
+                    // Debug.Log("Drained " + resourceDrain + " resource to restore health");
                 }
             }
         }
@@ -108,5 +109,10 @@ public class PlayerGPMechanics : MonoBehaviour
             }
         }
         
+        if (playerResource > maxResource)
+        {
+            playerResource = maxResource;
+        }
+
 	}
 }
