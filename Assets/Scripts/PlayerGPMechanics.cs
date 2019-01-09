@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerGPMechanics : MonoBehaviour
@@ -10,7 +11,7 @@ public class PlayerGPMechanics : MonoBehaviour
     [SerializeField] float hpThreshold = 25f; // At what health total we start draining resource for health
     [SerializeField] float resourceDrain = 5f; // How much resource is converted into health at once
     [SerializeField] float healthRestoreMult = 5f; // Multiplier for how much health we gain per second from a safe zone
-    [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat
+    [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat. 2 = twice as much health drain etc.
 
     [SerializeField] public static float pickUpGain = 10f; // How much resource we gain from a single pickup
 
@@ -20,7 +21,11 @@ public class PlayerGPMechanics : MonoBehaviour
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
 
-    private float drainTimer;
+    public GameObject overheatHitbox;
+    public Text resourceUI;
+    public Text healthUI;
+
+    private float drainTimer = 0;
 
      
 
@@ -28,23 +33,44 @@ public class PlayerGPMechanics : MonoBehaviour
     {
         playerHealth = startingHealth;
         playerResource = startingResource;
-	}
+        overheatHitbox = GameObject.Find("OverheatHitbox");
+        //resourceUI =  .Find("health");
+    }
 
     void Update()
     {
-        if (overheatActive)
+        if (Input.GetButton("Fire3"))
         {
-            playerHealth -= Time.deltaTime * overheatMult;
+            overheatActive = true;
+            overheatHitbox.SetActive(true);
         }
+
+        else if (!Input.GetButton("Fire3"))
+        {
+            overheatActive = false;
+            overheatHitbox.SetActive(false);
+        }
+
+        resourceUI.text = "Resource: " + playerResource;
+        healthUI.text = "HP: " + playerHealth;
     }
 
     void FixedUpdate ()
     {
 		if (!atSafeZone)
         {
-            playerHealth -= Time.deltaTime;
-            //Debug.Log("HP: " + playerHealth);
-            //Debug.Log("Resource: " + playerResource);
+            if (!overheatActive)
+            {
+                playerHealth -= Time.deltaTime;
+            }
+
+            else if (overheatActive)
+            {
+                playerHealth -= Time.deltaTime * overheatMult;
+            }
+
+            Debug.Log("HP: " + playerHealth);
+            Debug.Log("Resource: " + playerResource);
 
             if (playerHealth < hpThreshold)
             {
@@ -55,6 +81,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 }
 
                 drainTimer += Time.deltaTime;
+                // Sumtin' fishy right here boiii
 
                 if (drainTimer >= drainDelay && playerResource > 0)
                 {
@@ -77,7 +104,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
             else
             {
-                playerHealth += Time.deltaTime * 5;
+                playerHealth += Time.deltaTime * healthRestoreMult;
             }
         }
         
