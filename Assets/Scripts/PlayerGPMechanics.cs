@@ -39,19 +39,19 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3")) // Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
         {
             overheatActive = true;
             overheatHitbox.SetActive(true);
         }
 
-        else if (!Input.GetButton("Fire3"))
+        else if (!Input.GetButton("Fire3")) // If <Shift> is released, Overheat is deactivated
         {
             overheatActive = false;
             overheatHitbox.SetActive(false);
         }
 
-        resourceUI.text = "Resource: " + playerResource;
+        resourceUI.text = "Resource: " + playerResource; // Updating UI for Health and Resource values
         healthUI.text = "HP: " + playerHealth;
     }
 
@@ -59,12 +59,12 @@ public class PlayerGPMechanics : MonoBehaviour
     {
 		if (!atSafeZone)
         {
-            if (!overheatActive)
+            if (!overheatActive) // If Overheat is not active, we'll drain health normally
             {
                 playerHealth -= Time.deltaTime;
             }
 
-            else if (overheatActive)
+            else if (overheatActive) // If Overheat is active, we'll drain health based on OverheatMultiplier instead of regular drain
             {
                 playerHealth -= Time.deltaTime * overheatMult;
             }
@@ -72,9 +72,9 @@ public class PlayerGPMechanics : MonoBehaviour
             //Debug.Log("HP: " + playerHealth);
             //Debug.Log("Resource: " + playerResource);
 
-            if (playerHealth < hpThreshold)
+            if (playerHealth < hpThreshold) // If player health drops below Threshold, we keep checking if player is dead (player health at or below Zero) 
             {
-                if (playerHealth <= 0)
+                if (playerHealth <= 0 && playerResource > 0)
                 {
                     playerDead = true;
                     Debug.Log("Your fire went out. Ripperoni pepperoni.");
@@ -83,7 +83,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 drainTimer += Time.deltaTime;
                 // Sumtin' fishy right here boiii
 
-                if (drainTimer >= drainDelay && playerResource > 0)
+                if (drainTimer >= drainDelay && playerResource > 0) // Here we drain resource every drainDelay (default 5 seconds) and add the same amount to health, based on determined resourceDrain variable (Default is 5)
                 {
                     playerHealth += resourceDrain;
                     playerResource -= resourceDrain;
@@ -95,14 +95,14 @@ public class PlayerGPMechanics : MonoBehaviour
             }
         }
 
-        else if (atSafeZone && playerHealth < startingHealth)
+        else if (atSafeZone && playerHealth < startingHealth) // If player is at safe zone, we ignore all previous health calculations and conversions
         {
-            if (playerHealth >= startingHealth)
+            if (playerHealth >= startingHealth) // Failsafe. If for some reason player health is over starting health, we set playerHealth to startingHealth
             {
                 playerHealth = startingHealth;
             }
 
-            else
+            else // We restore player health with by healthRestoreMult every second (SafeZone = Healing zone)
             {
                 playerHealth += Time.deltaTime * healthRestoreMult;
             }
