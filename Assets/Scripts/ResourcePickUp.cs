@@ -12,7 +12,7 @@ public class ResourcePickUp : MonoBehaviour
         {
             PlayerGPMechanics.playerResource += PlayerGPMechanics.pickUpGain;
             gameObject.SetActive(false);
-            Debug.Log("Resource now at: " + PlayerGPMechanics.playerResource);
+            //Debug.Log("Resource now at: " + PlayerGPMechanics.playerResource);
         }
     }
 

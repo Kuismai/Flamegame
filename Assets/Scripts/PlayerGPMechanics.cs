@@ -69,8 +69,8 @@ public class PlayerGPMechanics : MonoBehaviour
                 playerHealth -= Time.deltaTime * overheatMult;
             }
 
-            Debug.Log("HP: " + playerHealth);
-            Debug.Log("Resource: " + playerResource);
+            //Debug.Log("HP: " + playerHealth);
+            //Debug.Log("Resource: " + playerResource);
 
             if (playerHealth < hpThreshold)
             {
