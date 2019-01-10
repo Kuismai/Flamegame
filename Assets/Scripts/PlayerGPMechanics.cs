@@ -22,6 +22,9 @@ public class PlayerGPMechanics : MonoBehaviour
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
 
+    //private Rigidbody2D rb;
+    //private bool jumping;
+
     public GameObject overheatHitbox;
     public Text resourceUI;
     public Text healthUI;
@@ -36,6 +39,7 @@ public class PlayerGPMechanics : MonoBehaviour
         playerResource = startingResource;
         overheatHitbox = GameObject.Find("OverheatHitbox");
         //resourceUI =  .Find("health");
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -52,8 +56,13 @@ public class PlayerGPMechanics : MonoBehaviour
             overheatHitbox.SetActive(false);
         }
 
-        resourceUI.text = "Resource: " + playerResource; // Updating UI for Health and Resource values
-        healthUI.text = "HP: " + playerHealth;
+        resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
+        healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
+
+        //if (Input.GetButton("Jump") && )
+        //{
+
+        //}
     }
 
     void FixedUpdate ()
@@ -96,14 +105,14 @@ public class PlayerGPMechanics : MonoBehaviour
             }
         }
 
-        else if (atSafeZone && playerHealth < startingHealth) // If player is at safe zone, we ignore all previous health calculations and conversions
+        else if (atSafeZone) // If player is at safe zone, we ignore all previous health calculations and conversions
         {
-            if (playerHealth >= startingHealth) // Failsafe. If for some reason player health is over starting health, we set playerHealth to startingHealth
+            if (playerHealth > startingHealth) // If player health is over starting health, we set playerHealth to startingHealth
             {
                 playerHealth = startingHealth;
             }
 
-            else // We restore player health with by healthRestoreMult every second (SafeZone = Healing zone)
+            else if (playerHealth < startingHealth) // If player health is under starting health, we restore player health with by healthRestoreMult every second (SafeZone = Healing zone)
             {
                 playerHealth += Time.deltaTime * healthRestoreMult;
             }

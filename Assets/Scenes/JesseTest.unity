@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 56734648}
   - component: {fileID: 56734647}
   - component: {fileID: 56734646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 246675478}
   - component: {fileID: 246675477}
   - component: {fileID: 246675476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 296320030}
   - component: {fileID: 296320029}
   - component: {fileID: 296320028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 324939050}
   - component: {fileID: 324939049}
   - component: {fileID: 324939048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,6 +854,26 @@ Prefab:
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 1297370729}
+    - target: {fileID: 114002169362523346, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: jumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114002169362523346, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_JumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50923913066831842, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50923913066831842, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc6cda2032c88348ae1d3d7e3770118, type: 2}
   m_IsPrefabAsset: 0
@@ -868,7 +888,7 @@ GameObject:
   - component: {fileID: 638160990}
   - component: {fileID: 638160989}
   - component: {fileID: 638160988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +991,7 @@ GameObject:
   - component: {fileID: 713319593}
   - component: {fileID: 713319592}
   - component: {fileID: 713319591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1142,7 @@ GameObject:
   - component: {fileID: 952224023}
   - component: {fileID: 952224022}
   - component: {fileID: 952224021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1287,7 @@ GameObject:
   - component: {fileID: 1059901802}
   - component: {fileID: 1059901801}
   - component: {fileID: 1059901800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1370,7 +1390,7 @@ GameObject:
   - component: {fileID: 1067973689}
   - component: {fileID: 1067973688}
   - component: {fileID: 1067973687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1546,7 @@ GameObject:
   - component: {fileID: 1453978294}
   - component: {fileID: 1453978293}
   - component: {fileID: 1453978292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1649,7 @@ GameObject:
   - component: {fileID: 1746609831}
   - component: {fileID: 1746609830}
   - component: {fileID: 1746609829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1752,7 @@ GameObject:
   - component: {fileID: 1790533964}
   - component: {fileID: 1790533963}
   - component: {fileID: 1790533962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,6 +1886,10 @@ Prefab:
     - target: {fileID: 1898003381159032, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
       propertyPath: m_Name
       value: WaxPickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898003381159032, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
@@ -2125,7 +2149,7 @@ GameObject:
   - component: {fileID: 2131548006}
   - component: {fileID: 2131548005}
   - component: {fileID: 2131548004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2228,7 +2252,7 @@ GameObject:
   - component: {fileID: 2140721009}
   - component: {fileID: 2140721008}
   - component: {fileID: 2140721007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

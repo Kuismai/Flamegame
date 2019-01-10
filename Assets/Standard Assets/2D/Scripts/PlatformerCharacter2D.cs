@@ -14,6 +14,9 @@ namespace UnityStandardAssets._2D
         public Rigidbody2D rigidBody;
         float speedLimiter = 0.01f;
 
+        public float jumpTime;
+        private float jumpTimer;
+
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
@@ -114,10 +117,17 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump) // && m_Anim.GetBool("Ground")
             {
+                jumpTimer = jumpTime;
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
+            }
+
+            if (jump && jumpTimer > 0)
+            {
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpTimer -= Time.deltaTime;
             }
         }
 

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerGPMechanics))]
+
 public class ResourcePickUp : MonoBehaviour
 {
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
