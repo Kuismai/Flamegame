@@ -1,16 +1,12 @@
 fileFormatVersion: 2
-guid: 14cfa00e7a7474e4aad017af5513918c
+guid: f6b47abb0e7f7a047b8cb5856b856823
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Droplets_0
-    21300002: Droplets_1
-    21300004: Droplets_2
-    21300006: Droplets_3
-    21300008: Droplets_4
-    21300010: Droplets_5
-    21300012: Droplets_6
-    21300014: Droplets_7
-    21300016: Droplets_8
+    21300000: Bowls_0
+    21300002: Bowls_1
+    21300004: Bowls_2
+    21300006: Bowls_3
+    21300008: Bowls_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -148,181 +144,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Droplets_0
+      name: Bowls_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 48
-        height: 31
+        x: 263
+        y: 138
+        width: 42
+        height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea95eb19a6f3f743821c70e2eb8b671
+      spriteID: e7d9b2faa162c94448e6f9fc2ff22036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_1
+      name: Bowls_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 64
-        width: 48
-        height: 31
+        x: 365
+        y: 76
+        width: 67
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a5cae75e3e988d43b92012eb7476611
+      spriteID: 9d292861095b75143a78ee09976329ef
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_2
+      name: Bowls_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 64
-        width: 48
-        height: 31
+        x: 454
+        y: 61
+        width: 76
+        height: 63
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba79ef1afa74e84389375855c72da0f
+      spriteID: 192e35d93eb50a84caca55753db0eb53
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_3
+      name: Bowls_3
       rect:
         serializedVersion: 2
-        x: 174
-        y: 64
-        width: 48
-        height: 31
+        x: 112
+        y: 16
+        width: 118
+        height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 516ce45e68b65634e9963e3572185737
+      spriteID: d7d7637b294610f4494ca2ea4642c0d3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_4
+      name: Bowls_4
       rect:
         serializedVersion: 2
-        x: 249
-        y: 48
-        width: 17
-        height: 23
+        x: 231
+        y: 35
+        width: 6
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3bf431aa4e8f2b459f1a0d0bd19996d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_5
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f14795c63cb0de346ae642e402241f7e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_6
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 1
-        width: 24
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c861dd135f7f2b4e9f5f97cc1075825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_7
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 0
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0935b81a689bed499fcaf90d79af7ca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_8
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 0
-        width: 47
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7178ac2a5f67674a9ef59350f4f9ace
+      spriteID: 9352eca39bc37e14292b2f2926ec5e10
       vertices: []
       indices: 
       edges: []
@@ -330,7 +246,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 40a956fdb144d6d41912380136e2671c
+    spriteID: 23ff310a7fc2c594f8f0d1a741787f98
     vertices: []
     indices: 
     edges: []
