@@ -7,11 +7,14 @@ public class PlayerGPMechanics : MonoBehaviour
 {
     [SerializeField] float startingHealth = 100f; // At how much health you start with
     [SerializeField] float startingResource = 0f; // At how much resource you start with
+    [SerializeField] float healthDecayMult = 1f; // Multiplier for how fast health decays while not in safe zone
     [SerializeField] float drainDelay = 5f; // Delay between resource drains to restore health
     [SerializeField] float hpThreshold = 25f; // At what health total we start draining resource for health
     [SerializeField] float resourceDrain = 5f; // How much resource is converted into health at once
     [SerializeField] float healthRestoreMult = 5f; // Multiplier for how much health we gain per second from a safe zone
     [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat. 2 = twice as much health drain etc.
+    [SerializeField] float resourceBurnRate = 0.5f; // Multiplier for how much less/more your resource drains while using Overheat
+    [SerializeField] float overheatRegenMult = 0.2f; // How much health we regen while Overheating using resource
 
     [SerializeField] public static float pickUpGain = 10f; // How much resource we gain from a single pickup
 
@@ -58,11 +61,6 @@ public class PlayerGPMechanics : MonoBehaviour
 
         resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
         healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
-
-        //if (Input.GetButton("Jump") && )
-        //{
-
-        //}
     }
 
     void FixedUpdate ()
@@ -71,12 +69,24 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             if (!overheatActive) // If Overheat is not active, we'll drain health normally
             {
-                playerHealth -= Time.deltaTime;
+                playerHealth -= Time.deltaTime * healthDecayMult;
             }
 
-            else if (overheatActive) // If Overheat is active, we'll drain health based on OverheatMultiplier instead of regular drain
+            else if (overheatActive) // If Overheat is active, we'll drain resource first
             {
-                playerHealth -= Time.deltaTime * overheatMult;
+                //playerHealth -= Time.deltaTime * healthDecayMult;
+
+                if (playerResource > 0)
+                {
+                    playerResource -= Time.deltaTime * overheatMult * resourceBurnRate;
+                    playerHealth += Time.deltaTime * overheatRegenMult;
+                }
+
+                else if (playerResource <= 0) // If resource drops to zero, we'll start draining health to maintain Overheat
+                {
+                    playerHealth -= Time.deltaTime * overheatMult;
+                }
+                
             }
 
             //Debug.Log("HP: " + playerHealth);
@@ -105,7 +115,7 @@ public class PlayerGPMechanics : MonoBehaviour
             }
         }
 
-        else if (atSafeZone) // If player is at safe zone, we ignore all previous health calculations and conversions
+        else if (atSafeZone) // If player is at safe zone, we ignore health decay and conversions
         {
             if (playerHealth > startingHealth) // If player health is over starting health, we set playerHealth to startingHealth
             {
@@ -121,6 +131,11 @@ public class PlayerGPMechanics : MonoBehaviour
         if (playerResource > maxResource)
         {
             playerResource = maxResource;
+        }
+
+        if (playerResource < 0)
+        {
+            playerResource = 0;
         }
 
 	}

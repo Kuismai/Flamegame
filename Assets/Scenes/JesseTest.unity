@@ -874,6 +874,16 @@ Prefab:
       propertyPath: m_Mass
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114450417317892210, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: resourceBurnRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114450417317892210, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: overheatRegenMult
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc6cda2032c88348ae1d3d7e3770118, type: 2}
   m_IsPrefabAsset: 0
