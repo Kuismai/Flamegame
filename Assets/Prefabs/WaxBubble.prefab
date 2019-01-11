@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 70617380834877374}
   - component: {fileID: 114835863825740144}
   m_Layer: 0
-  m_Name: WasBubble
+  m_Name: WaxBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4263538670406980}
+  - component: {fileID: 114765242196413530}
   m_Layer: 0
   m_Name: Firefly
   m_TagString: Untagged
@@ -102,6 +103,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.08
   amplitude: 0.5
+--- !u!114 &114765242196413530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474353849669440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1b9af957dc58e4aa1c443659bfe491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212792830738902912
 SpriteRenderer:
   m_ObjectHideFlags: 1

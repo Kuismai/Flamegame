@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerGPMechanics))]
+//[RequireComponent(typeof(PlayerGPMechanics))]
 
 public class ResourcePickUp : MonoBehaviour
 {
