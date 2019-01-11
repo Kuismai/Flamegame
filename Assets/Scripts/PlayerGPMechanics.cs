@@ -15,7 +15,7 @@ public class PlayerGPMechanics : MonoBehaviour
     [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat. 2 = twice as much health drain etc.
     [SerializeField] float resourceBurnRate = 0.5f; // Multiplier for how much less/more your resource drains while using Overheat
     [SerializeField] float overheatRegenMult = 0.2f; // How much health we regen while Overheating using resource
-
+    [SerializeField] bool decayHealthInOverheat = false;
     [SerializeField] public static float pickUpGain = 10f; // How much resource we gain from a single pickup
 
     public static float playerHealth = 100f;
@@ -74,7 +74,10 @@ public class PlayerGPMechanics : MonoBehaviour
 
             else if (overheatActive) // If Overheat is active, we'll drain resource first
             {
-                //playerHealth -= Time.deltaTime * healthDecayMult;
+                if (decayHealthInOverheat)
+                {
+                    playerHealth -= Time.deltaTime * healthDecayMult;
+                }
 
                 if (playerResource > 0)
                 {
