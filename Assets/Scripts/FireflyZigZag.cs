@@ -5,8 +5,8 @@ using UnityEngine;
 public class FireflyZigZag : MonoBehaviour
 {
     private Vector3 pos1 = new Vector3(0f, 1.1f, 0);
-    public float speed = 1.0f;
-    public float amplitude = 8.0f;
+    public float speed = 0.08f;
+    public float amplitude = 0.5f;
     float tx = 0f;
     float ty = 0f;
     //resets position of the firefly
