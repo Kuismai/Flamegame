@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212438409396943792}
   - component: {fileID: 114233130482456174}
   - component: {fileID: 70078502840785326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PickUpPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

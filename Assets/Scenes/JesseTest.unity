@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 56734648}
   - component: {fileID: 56734647}
   - component: {fileID: 56734646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,6 +817,36 @@ Prefab:
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 1297370729}
+    - target: {fileID: 114002169362523346, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: jumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114002169362523346, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_JumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50923913066831842, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50923913066831842, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114450417317892210, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: resourceBurnRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114450417317892210, guid: 9cc6cda2032c88348ae1d3d7e3770118,
+        type: 2}
+      propertyPath: overheatRegenMult
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc6cda2032c88348ae1d3d7e3770118, type: 2}
   m_IsPrefabAsset: 0
@@ -1143,6 +1173,10 @@ Prefab:
     - target: {fileID: 1898003381159032, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
       propertyPath: m_Name
       value: WaxPickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898003381159032, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884d9f5be5425b64398cced7ca81c817, type: 2}
@@ -1490,7 +1524,7 @@ GameObject:
   - component: {fileID: 2140721009}
   - component: {fileID: 2140721008}
   - component: {fileID: 2140721007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaxPickUp (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
