@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: 14cfa00e7a7474e4aad017af5513918c
+guid: d8eafa56438efb14eb255d4c64be5495
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Droplets_0
-    21300002: Droplets_1
-    21300004: Droplets_2
-    21300006: Droplets_3
-    21300008: Droplets_4
-    21300010: Droplets_5
-    21300012: Droplets_6
-    21300014: Droplets_7
-    21300016: Droplets_8
+    21300000: Fireflies2_0
+    21300002: Fireflies2_1
+    21300004: Fireflies2_2
+    21300006: Fireflies2_3
+    21300008: Fireflies2_4
+    21300010: Fireflies2_5
+    21300012: Fireflies2_6
+    21300014: Fireflies2_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -148,181 +147,161 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Droplets_0
+      name: Fireflies2_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 48
-        height: 31
+        x: 3
+        y: 8
+        width: 46
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea95eb19a6f3f743821c70e2eb8b671
+      spriteID: ff5d871e71180a74e951d6b5e563f721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_1
+      name: Fireflies2_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 64
-        width: 48
-        height: 31
+        x: 59
+        y: 12
+        width: 50
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a5cae75e3e988d43b92012eb7476611
+      spriteID: e4841d9273038c64482df9564f35048b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_2
+      name: Fireflies2_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 64
-        width: 48
-        height: 31
+        x: 117
+        y: 8
+        width: 46
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba79ef1afa74e84389375855c72da0f
+      spriteID: ad0ee1dbaf9e3f24eaf917412bd39b02
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_3
+      name: Fireflies2_3
       rect:
         serializedVersion: 2
-        x: 174
-        y: 64
-        width: 48
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 516ce45e68b65634e9963e3572185737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_4
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 48
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3bf431aa4e8f2b459f1a0d0bd19996d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_5
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f14795c63cb0de346ae642e402241f7e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_6
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 1
-        width: 24
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c861dd135f7f2b4e9f5f97cc1075825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_7
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 0
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0935b81a689bed499fcaf90d79af7ca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_8
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 0
+        x: 175
+        y: 12
         width: 47
-        height: 27
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7178ac2a5f67674a9ef59350f4f9ace
+      spriteID: ba890920da778654f90cb678faf783f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireflies2_4
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 12
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0215302ca46fff439f2cfebf86c7101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireflies2_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 10
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c27f8009bb3bf489b35cc7e02aa90b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireflies2_6
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 12
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c995adb9c130344aa0c9f0f11456da7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireflies2_7
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 12
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d9923acae2fc041957c1bb9c460910
       vertices: []
       indices: 
       edges: []
@@ -330,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 40a956fdb144d6d41912380136e2671c
+    spriteID: ccb992d7387a75f458d238b674d62aac
     vertices: []
     indices: 
     edges: []
