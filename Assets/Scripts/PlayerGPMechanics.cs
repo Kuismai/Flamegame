@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerGPMechanics : MonoBehaviour
 {
-    [SerializeField] float startingHealth = 100f; // At how much health you start with
-    [SerializeField] float startingResource = 0f; // At how much resource you start with
+    [SerializeField] static float startingHealth = 100f; // At how much health you start with
+    [SerializeField] static float startingResource = 0f; // At how much resource you start with
     [SerializeField] float healthDecayMult = 1f; // Multiplier for how fast health decays while not in safe zone
     [SerializeField] float drainDelay = 5f; // Delay between resource drains to restore health
     [SerializeField] float hpThreshold = 25f; // At what health total we start draining resource for health
@@ -34,9 +34,9 @@ public class PlayerGPMechanics : MonoBehaviour
 
     private float drainTimer = 0;
 
-     
 
-	void Start ()
+
+    void Start()
     {
         playerHealth = startingHealth;
         playerResource = startingResource;
@@ -63,9 +63,9 @@ public class PlayerGPMechanics : MonoBehaviour
         healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
     }
 
-    void FixedUpdate ()
+    void FixedUpdate()
     {
-		if (!atSafeZone)
+        if (!atSafeZone)
         {
             if (!overheatActive) // If Overheat is not active, we'll drain health normally
             {
@@ -89,7 +89,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 {
                     playerHealth -= Time.deltaTime * overheatMult;
                 }
-                
+
             }
 
             //Debug.Log("HP: " + playerHealth);
@@ -100,7 +100,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 if (playerHealth <= 0)
                 {
                     playerDead = true;
-                    Debug.Log("Your fire went out. Ripperoni pepperoni.");
+                    //Debug.Log("Your fire went out. Ripperoni pepperoni.");
                 }
 
                 drainTimer += Time.deltaTime;
@@ -130,7 +130,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 playerHealth += Time.deltaTime * healthRestoreMult;
             }
         }
-        
+
         if (playerResource > maxResource)
         {
             playerResource = maxResource;
@@ -141,5 +141,21 @@ public class PlayerGPMechanics : MonoBehaviour
             playerResource = 0;
         }
 
-	}
+        if (playerDead)
+        {
+            ResetPlayer();
+            Debug.Log("You're dead dawg");
+        }
+
+    }
+
+    public static void ResetPlayer()
+    {
+        GameObject player = GameObject.Find("Player");
+
+        PlayerGPMechanics.playerHealth = PlayerGPMechanics.startingHealth;
+        PlayerGPMechanics.playerResource = PlayerGPMechanics.startingResource;
+
+        player.transform.position = CheckpointHandler.lastCheckpoint;
+    }
 }

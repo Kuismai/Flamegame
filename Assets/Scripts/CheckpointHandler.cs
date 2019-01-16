@@ -19,12 +19,13 @@ public class CheckpointHandler : MonoBehaviour {
         //pressing R will return the player to last checkpoint:
         if (Input.GetKeyDown(KeyCode.R))
         {
-            restartFromLastCheckpoint();
+            //restartFromLastCheckpoint();
+            PlayerGPMechanics.ResetPlayer();
         }
 	}
 
-    void restartFromLastCheckpoint()
-    {
-        player.transform.position = lastCheckpoint;
-    }
+    //void restartFromLastCheckpoint()
+    //{
+    //    player.transform.position = CheckpointHandler.lastCheckpoint;
+    //}
 }

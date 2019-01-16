@@ -89,7 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d29f92857b446c4e9defa8ce4956732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropletDamage: 30
+  dropletDamage: 20
+  overheatIgnoresDroplets: 1
 --- !u!212 &212827714465762840
 SpriteRenderer:
   m_ObjectHideFlags: 1
