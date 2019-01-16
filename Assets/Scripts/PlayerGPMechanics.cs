@@ -151,11 +151,13 @@ public class PlayerGPMechanics : MonoBehaviour
 
     public static void ResetPlayer()
     {
-        GameObject player = GameObject.Find("Player");
+        GameObject player = GameObject.Find("PlayerCharacter");
 
         PlayerGPMechanics.playerHealth = PlayerGPMechanics.startingHealth;
         PlayerGPMechanics.playerResource = PlayerGPMechanics.startingResource;
 
         player.transform.position = CheckpointHandler.lastCheckpoint;
+
+        PlayerGPMechanics.playerDead = false;
     }
 }
