@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateRope : MonoBehaviour {
+public class RopeScript : MonoBehaviour {
 
     public int ropeLength; // number of rope pieces
     public GameObject ropePiece;
     public float spawnDistance;
-    public float rotationZ;
     public GameObject firstConnectPoint, lastConnectPoint;
 
     //// use this for initialization
@@ -24,34 +23,45 @@ public class CreateRope : MonoBehaviour {
 
     private void Awake()
     {
-        CreateNewRope(ropeLength);
+        CreateNewRope(ropeLength, firstConnectPoint, lastConnectPoint);
     }
 
-    void CreateNewRope(int length)
+    void CreateNewRope(int length, GameObject firstConnect, GameObject lastConnect)
     {
         GameObject currentObj, previousObj = null;
 
+        if (firstConnect != null)
+        {
+            // Move the rope to the first connect point:
+            gameObject.transform.position = firstConnect.transform.position;
+        }
+
+        // Instantiate rope pieces:
+        // TODO: rope piece rotation towards second connect point?
         for (int i = 0 ; i < length ; i++)
         {
             currentObj = Instantiate(ropePiece, 
                             new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - (spawnDistance * i), gameObject.transform.position.z),
                             new Quaternion(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z, gameObject.transform.rotation.w));
 
-            if (i == length && lastConnectPoint != null)
+            if (i == 0 && firstConnect != null)
             {
-                // TODO: connect last rope piece to a thing:
-
+                // Connect first rope piece to firstConnect using hingePoint2D:
+                currentObj.GetComponent<HingeJoint2D>().connectedBody = firstConnect.GetComponent<Rigidbody2D>();
             }
+
             if (i > 0)
             {
-                // connect first hingePoint2D to the previous rope piece:
+                // Connect rope piece's hingePoint2D to the previous rope piece:
                 currentObj.GetComponent<HingeJoint2D>().connectedBody = previousObj.GetComponent<Rigidbody2D>();
             }
 
-            if (i == length && lastConnectPoint != null)
+            if (i == (length - 1) && lastConnect != null)
             {
-                // TODO: connect last rope piece to a thing using second hingePoint2D:
-                // ?? :D ?
+                // Create a new hingeJoint2D and connect it to lastConnect:
+                HingeJoint2D component = currentObj.AddComponent<HingeJoint2D>();
+                component.anchor = new Vector2(0f, -0.75f);
+                component.connectedBody = lastConnect.GetComponent<Rigidbody2D>();
             }
 
             currentObj.transform.parent = gameObject.transform;

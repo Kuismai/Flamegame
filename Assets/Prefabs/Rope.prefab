@@ -20,6 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4438493982772102}
   - component: {fileID: 114705286855195082}
+  - component: {fileID: 50094482307980086}
+  - component: {fileID: 233340062077093142}
+  - component: {fileID: 233021589369616106}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -40,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50094482307980086
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418216217424260}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 2a610a63a1795fe4eae1495db0605ba1, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &114705286855195082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,6 +74,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509026e49379c654d9b97d40dc3a367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ropeLength: 10
-  ropePiece: {fileID: 1953591131187106, guid: 4c1e69f6fbde2b6479a907255a6b1106, type: 2}
-  spawnDistance: 2
+  ropeLength: 30
+  ropePiece: {fileID: 1014063800379168, guid: b7f74e2980e96c041ace3249a13ccdf0, type: 2}
+  spawnDistance: 0.1
+  firstConnectPoint: {fileID: 0}
+  lastConnectPoint: {fileID: 0}
+--- !u!233 &233021589369616106
+HingeJoint2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418216217424260}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: -0.75}
+  m_ConnectedAnchor: {x: 3.09, y: 4.99105}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!233 &233340062077093142
+HingeJoint2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418216217424260}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: -0.25}
+  m_ConnectedAnchor: {x: 3.09, y: 5.49105}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
