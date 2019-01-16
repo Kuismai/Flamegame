@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 14cfa00e7a7474e4aad017af5513918c
+guid: 23f953177998734408d781817547bfc7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Droplets_0
-    21300002: Droplets_1
-    21300004: Droplets_2
-    21300006: Droplets_3
-    21300008: Droplets_4
-    21300010: Droplets_5
-    21300012: Droplets_6
-    21300014: Droplets_7
-    21300016: Droplets_8
+    21300000: WateryDoom3_0
+    21300002: WateryDoom3_1
+    21300004: WateryDoom3_2
+    21300006: WateryDoom3_3
+    21300008: WateryDoom3_4
+    21300010: WateryDoom3_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -148,181 +145,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Droplets_0
+      name: WateryDoom3_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 48
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ea95eb19a6f3f743821c70e2eb8b671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_1
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 64
-        width: 48
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a5cae75e3e988d43b92012eb7476611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_2
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 64
-        width: 48
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ba79ef1afa74e84389375855c72da0f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_3
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 64
-        width: 48
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 516ce45e68b65634e9963e3572185737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_4
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 48
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3bf431aa4e8f2b459f1a0d0bd19996d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_5
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f14795c63cb0de346ae642e402241f7e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_6
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 1
-        width: 24
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c861dd135f7f2b4e9f5f97cc1075825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Droplets_7
-      rect:
-        serializedVersion: 2
-        x: 93
+        x: 0
         y: 0
-        width: 35
-        height: 24
+        width: 94.5
+        height: 283
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0935b81a689bed499fcaf90d79af7ca
+      spriteID: 79c78177507f5274693b81f5f7795a2e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Droplets_8
+      name: WateryDoom3_1
       rect:
         serializedVersion: 2
-        x: 138
+        x: 94
         y: 0
-        width: 47
-        height: 27
+        width: 94.5
+        height: 283
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7178ac2a5f67674a9ef59350f4f9ace
+      spriteID: d2f5fac40aac62b439edb3a9f74a31b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WateryDoom3_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94.5
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0302447bb533444c9ed37e7fb140b6f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WateryDoom3_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94.5
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a89fbff6231fd459b24e0ca3743061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WateryDoom3_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 0
+        width: 94.5
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a0499cfb085c048bb21233641fbd8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WateryDoom3_5
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 94.5
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c625df650546d0646866885a5654ec8f
       vertices: []
       indices: 
       edges: []
@@ -330,7 +267,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 40a956fdb144d6d41912380136e2671c
+    spriteID: 1dc66423a3bee854380c49cc86d222b5
     vertices: []
     indices: 
     edges: []
