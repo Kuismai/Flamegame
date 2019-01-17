@@ -9,18 +9,6 @@ public class RopeScript : MonoBehaviour {
     public float spawnDistance;
     public GameObject firstConnectPoint, lastConnectPoint;
 
-    //// use this for initialization
-    //void Start()
-    //{
-
-    //}
-
-    //// update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
     private void Awake()
     {
         CreateNewRope(ropeLength, firstConnectPoint, lastConnectPoint);
@@ -48,6 +36,8 @@ public class RopeScript : MonoBehaviour {
             {
                 // Connect first rope piece to firstConnect using hingePoint2D:
                 currentObj.GetComponent<HingeJoint2D>().connectedBody = firstConnect.GetComponent<Rigidbody2D>();
+                currentObj.GetComponent<HingeJoint2D>().autoConfigureConnectedAnchor = false;
+                currentObj.GetComponent<HingeJoint2D>().connectedAnchor = Vector2.zero;
             }
 
             if (i > 0)
@@ -59,9 +49,11 @@ public class RopeScript : MonoBehaviour {
             if (i == (length - 1) && lastConnect != null)
             {
                 // Create a new hingeJoint2D and connect it to lastConnect:
-                HingeJoint2D component = currentObj.AddComponent<HingeJoint2D>();
-                component.anchor = new Vector2(0f, -0.75f);
-                component.connectedBody = lastConnect.GetComponent<Rigidbody2D>();
+                HingeJoint2D joint = currentObj.AddComponent<HingeJoint2D>();
+                joint.anchor = new Vector2(0f, -0.75f);
+                joint.autoConfigureConnectedAnchor = false;
+                joint.connectedAnchor = Vector2.zero;
+                joint.connectedBody = lastConnect.GetComponent<Rigidbody2D>();
             }
 
             currentObj.transform.parent = gameObject.transform;
