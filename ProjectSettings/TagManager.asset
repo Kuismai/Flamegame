@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - DropletExit
+  - RefuelZone
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Player
   - Overheat
   - PickUp
-  - 
+  - IgnoreJump
   - 
   - 
   - 

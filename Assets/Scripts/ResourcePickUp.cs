@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ResourcePickUp : MonoBehaviour
 {
+    //private PlayerGPMechanics gpm;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -25,6 +27,11 @@ public class ResourcePickUp : MonoBehaviour
                 Debug.Log("Restored " + PlayerGPMechanics.pickUpGain + " resource");
             }
         }
+    }
+
+    private void Awake()
+    {
+        //gpm = GetComponent<PlayerGPMechanics>();
     }
 
     void Start ()

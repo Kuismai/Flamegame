@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerGPMechanics : MonoBehaviour
 {
-    [SerializeField] static float startingHealth = 100f; // At how much health you start with
-    [SerializeField] static float startingResource = 0f; // At how much resource you start with
+    [SerializeField] float startingHealth = 100f; // At how much health you start with
+    [SerializeField] float startingResource = 0f; // At how much resource you start with
     [SerializeField] float healthDecayMult = 1f; // Multiplier for how fast health decays while not in safe zone
     [SerializeField] float drainDelay = 5f; // Delay between resource drains to restore health
     [SerializeField] float hpThreshold = 25f; // At what health total we start draining resource for health
@@ -15,9 +15,10 @@ public class PlayerGPMechanics : MonoBehaviour
     [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat. 2 = twice as much health drain etc.
     [SerializeField] float resourceBurnRate = 0.5f; // Multiplier for how much less/more your resource drains while using Overheat
     [SerializeField] float overheatRegenMult = 0.2f; // How much health we regen while Overheating using resource
-    [SerializeField] bool decayHealthInOverheat = false;
-    [SerializeField] public static float pickUpGain = 10f; // How much resource we gain from a single pickup
+    [SerializeField] bool decayHealthInOverheat = false; // Do we continue health decay when Overheat is active.
+    [SerializeField] float setPickUpGain = 10f; // Set how much resource we gain for each resource pickup
 
+    public static float pickUpGain; // How much resource we gain from a single pickup
     public static float playerHealth = 100f;
     public static float playerResource = 0f;
     public static float maxResource = 100f;
@@ -25,7 +26,9 @@ public class PlayerGPMechanics : MonoBehaviour
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
 
-    //private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    public static bool updrafting = false;
+    public float updraftVelocity = 100f;
     //private bool jumping;
 
     public GameObject overheatHitbox;
@@ -34,13 +37,21 @@ public class PlayerGPMechanics : MonoBehaviour
 
     private float drainTimer = 0;
 
+    // Variables for ResetPlayer
+    GameObject player;
+    public bool resetHealth = true;
+    public bool resetResource = true;
 
 
-    void Start()
+
+    void Awake()
     {
+        player = GameObject.Find("PlayerCharacter");
         playerHealth = startingHealth;
         playerResource = startingResource;
+        pickUpGain = setPickUpGain;
         overheatHitbox = GameObject.Find("OverheatHitbox");
+        rb = GetComponent<Rigidbody2D>();
         //resourceUI =  .Find("health");
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -131,33 +142,61 @@ public class PlayerGPMechanics : MonoBehaviour
             }
         }
 
-        if (playerResource > maxResource)
+        if (playerResource > maxResource) // If player resource goes over the maximum (def.100) for some reason, we set it to max.
         {
             playerResource = maxResource;
         }
 
-        if (playerResource < 0)
+        if (playerResource < 0) // If player resource goes below zero, we set it to zero.
         {
             playerResource = 0;
         }
 
-        if (playerDead)
+        if (playerDead) // If player is flagged as dead, we run the reset command,
         {
             ResetPlayer();
             Debug.Log("You're dead dawg");
         }
 
+        if (updrafting)
+        {
+            //rb.velocity = new Vector2(0f, updraftVelocity);
+            rb.AddForce(new Vector2(0f, updraftVelocity));
+        }
+
     }
 
-    public static void ResetPlayer()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject player = GameObject.Find("PlayerCharacter");
+        if (collision.gameObject.tag == "RefuelZone")
+        {
+            atSafeZone = true;
+            Debug.Log("Entered Safe Zone");
+        }
+    }
 
-        PlayerGPMechanics.playerHealth = PlayerGPMechanics.startingHealth;
-        PlayerGPMechanics.playerResource = PlayerGPMechanics.startingResource;
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "RefuelZone")
+        {
+            atSafeZone = false;
+            Debug.Log("Left Safe Zone");
+        }
+    }
 
+    public void ResetPlayer() // Method we can call to in any script to reset the player.
+    {
+        if (resetHealth) // Reset player health if it's enabled in engine
+        {
+            playerHealth = startingHealth;
+        }
+
+        if (resetResource) // Reset player resource to starting resource if enabled.
+        {
+            playerResource = startingResource;
+        }
+        
         player.transform.position = CheckpointHandler.lastCheckpoint;
-
-        PlayerGPMechanics.playerDead = false;
+        playerDead = false; // Flip players death tag back
     }
 }

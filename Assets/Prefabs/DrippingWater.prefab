@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934505111857836}
   - component: {fileID: 212471022955135180}
+  - component: {fileID: 95427427307175716}
   m_Layer: 0
   m_Name: DropletSpawner
   m_TagString: Untagged
@@ -53,6 +54,7 @@ GameObject:
   - component: {fileID: 4101950504344652}
   - component: {fileID: 212054037455873866}
   - component: {fileID: 61573927560390136}
+  - component: {fileID: 95346659967509094}
   m_Layer: 0
   m_Name: DropletExit
   m_TagString: DropletExit
@@ -123,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332905079300416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.649889, y: 1.216, z: -0.3359375}
+  m_LocalPosition: {x: -0.649889, y: 1.14, z: -0.3359375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927086417165204}
@@ -155,6 +157,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7480755, y: 0.051382065}
   m_EdgeRadius: 0
+--- !u!95 &95346659967509094
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918822401969752}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff03298100ed59b42aee4faffeb392bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95427427307175716
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332905079300416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7424b442361861c44a9baed449c4c073, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114801988899564510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droplet: {fileID: 1591744430891204, guid: 88b0a21e2fc2955458ff27f5bb3fbef9, type: 2}
-  spawnDelay: 2
+  spawnDelay: 1
 --- !u!212 &212054037455873866
 SpriteRenderer:
   m_ObjectHideFlags: 1
