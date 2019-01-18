@@ -8,9 +8,15 @@ public class RopeScript : MonoBehaviour {
     public GameObject ropePiece;
     public float spawnDistance;
     public GameObject firstConnectPoint, lastConnectPoint;
+    public Vector2 firstConnectedAnchor, lastConnectedAnchor;
 
     private void Awake()
     {
+        if (firstConnectPoint != null && lastConnectPoint != null)
+        {
+            CalculateDistance(firstConnectPoint, lastConnectPoint);
+        }
+
         CreateNewRope(ropeLength, firstConnectPoint, lastConnectPoint);
     }
 
@@ -37,7 +43,7 @@ public class RopeScript : MonoBehaviour {
                 // Connect first rope piece to firstConnect using hingePoint2D:
                 currentObj.GetComponent<HingeJoint2D>().connectedBody = firstConnect.GetComponent<Rigidbody2D>();
                 currentObj.GetComponent<HingeJoint2D>().autoConfigureConnectedAnchor = false;
-                currentObj.GetComponent<HingeJoint2D>().connectedAnchor = Vector2.zero;
+                currentObj.GetComponent<HingeJoint2D>().connectedAnchor = firstConnectedAnchor;
             }
 
             if (i > 0)
@@ -52,12 +58,22 @@ public class RopeScript : MonoBehaviour {
                 HingeJoint2D joint = currentObj.AddComponent<HingeJoint2D>();
                 joint.anchor = new Vector2(0f, -0.75f);
                 joint.autoConfigureConnectedAnchor = false;
-                joint.connectedAnchor = Vector2.zero;
+                joint.connectedAnchor = lastConnectedAnchor;
                 joint.connectedBody = lastConnect.GetComponent<Rigidbody2D>();
             }
 
             currentObj.transform.parent = gameObject.transform;
             previousObj = currentObj;
         }
+    }
+
+    void CalculateDistance(GameObject obj1, GameObject obj2)
+    {
+        // Calculates distance between two game objects:
+        float distance = Vector2.Distance(obj1.transform.position, obj2.transform.position);
+        Debug.Log("Distance between " + obj1.name + " and " + obj2.name + ": " + distance);
+
+        // Set rope length based on distance:
+        //ropeLength = Mathf.RoundToInt(distance * 2);
     }
 }

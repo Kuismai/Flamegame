@@ -85,9 +85,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 5
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 2a610a63a1795fe4eae1495db0605ba1, type: 2}
   m_Interpolate: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e931399ffed6a447ab93b40bbae7d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnTimerMax: 10
-  onFireThreshold: 8
+  burnTimerMax: 5
+  onFireThreshold: 4.75
   burnTimer: 0
   isOnFire: 0
 --- !u!212 &212210488178073320
@@ -216,5 +216,5 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 45
+    m_UpperAngle: 135
