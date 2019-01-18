@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 480cff5ec66ea11459f2bb825484b90c
+guid: 67e38ec8786ed194880ce1646fc77526
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Cage_0
+    21300000: Fliers2_0
+    21300002: Fliers2_1
+    21300004: Fliers2_2
+    21300006: Fliers2_3
+    21300008: Fliers2_4
+    21300010: Fliers2_5
+    21300012: Fliers2_6
+    21300014: Fliers2_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -41,13 +48,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 13, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -140,21 +147,161 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cage_0
+      name: Fliers2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 225
-        height: 388
+        x: 27
+        y: 359
+        width: 172
+        height: 150
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30fd632cb852b754e9663cf2191e6003
+      spriteID: 228670b9cd69cb34594260d787304a9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_1
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 353
+        width: 286
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83687b4681eec9043af26f5e5ac60a61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 230
+        width: 73
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8729ef7d61e150e4d8066badb881febd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 201
+        width: 187
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a1a0432d266a046b936b98023653cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_4
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 221
+        width: 137
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0659f787ba49f7a41b004c502fdc8cf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_5
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 48
+        width: 200
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2c4c1b15ca1bc4db3d05d12a518474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 85
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cc460551e901945803562092279ded
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fliers2_7
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 44
+        width: 189
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1929d656eef106b42a84f9d5c16b6371
       vertices: []
       indices: 
       edges: []
@@ -162,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2ffd91a281dc2b640a20b2a625156391
+    spriteID: f07af377576b0374496ed2a1fa9714cd
     vertices: []
     indices: 
     edges: []
