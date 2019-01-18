@@ -9,6 +9,8 @@ TagManager:
   - Firefly
   - DropletExit
   - RefuelZone
+  - OverheatHitbox
+  - UpdraftBox
   layers:
   - Default
   - TransparentFX
