@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114245541112919868}
   - component: {fileID: 114450417317892210}
   - component: {fileID: 95992115029951286}
+  - component: {fileID: 82856624098763566}
   m_Layer: 8
   m_Name: PlayerPlaceHolder
   m_TagString: Player
@@ -158,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232816562804650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.025, y: -0.675, z: 0}
+  m_LocalPosition: {x: -0.51, y: -0.675, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4387537734134326}
@@ -175,12 +176,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 1
   m_AngularDrag: 0.2
-  m_GravityScale: 2
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: f81d0cc06ca9729408e8a8d21401c2f9, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -214,6 +215,101 @@ CapsuleCollider2D:
   m_Offset: {x: -0.021242142, y: 0.12745321}
   m_Size: {x: 1.7108078, y: 2.263106}
   m_Direction: 0
+--- !u!82 &82856624098763566
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770234690381790}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4b6ccbb0833358c4ea37149776f68341, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.33
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95992115029951286
 Animator:
   serializedVersion: 3
@@ -243,15 +339,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   m_MaxSpeed: 10
-  m_JumpForce: 600
+  m_JumpForce: 90
   m_CrouchSpeed: 0.36
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 55
   airSpeed: 1
+  initialJump: 2
   rigidBody: {fileID: 50923913066831842}
+  jumpTime: 0.3
 --- !u!114 &114245541112919868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,11 +375,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 30
   startingResource: 0
+  healthDecayMult: 1
   drainDelay: 0.5
   hpThreshold: 15
   resourceDrain: 2
   healthRestoreMult: 5
   overheatMult: 4
+  resourceBurnRate: 0.4
+  overheatRegenMult: 0
+  decayHealthInOverheat: 0
   overheatHitbox: {fileID: 1597536259302770}
   resourceUI: {fileID: 0}
   healthUI: {fileID: 0}

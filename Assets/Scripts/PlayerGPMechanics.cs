@@ -15,9 +15,10 @@ public class PlayerGPMechanics : MonoBehaviour
     [SerializeField] float overheatMult = 2f; // Multiplier for how much health is drained because of Overheat. 2 = twice as much health drain etc.
     [SerializeField] float resourceBurnRate = 0.5f; // Multiplier for how much less/more your resource drains while using Overheat
     [SerializeField] float overheatRegenMult = 0.2f; // How much health we regen while Overheating using resource
-    [SerializeField] bool decayHealthInOverheat = false;
-    [SerializeField] public static float pickUpGain = 10f; // How much resource we gain from a single pickup
+    [SerializeField] bool decayHealthInOverheat = false; // Do we continue health decay when Overheat is active.
+    [SerializeField] float setPickUpGain = 10f; // Set how much resource we gain for each resource pickup
 
+    public static float pickUpGain; // How much resource we gain from a single pickup
     public static float playerHealth = 100f;
     public static float playerResource = 0f;
     public static float maxResource = 100f;
@@ -25,7 +26,9 @@ public class PlayerGPMechanics : MonoBehaviour
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
 
-    //private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    public static bool updrafting = false;
+    public float updraftVelocity = 100f;
     //private bool jumping;
 
     public GameObject overheatHitbox;
@@ -34,13 +37,21 @@ public class PlayerGPMechanics : MonoBehaviour
 
     private float drainTimer = 0;
 
-     
+    // Variables for ResetPlayer
+    GameObject player;
+    public bool resetHealth = true;
+    public bool resetResource = true;
 
-	void Start ()
+
+
+    void Awake()
     {
+        player = GameObject.Find("PlayerCharacter");
         playerHealth = startingHealth;
         playerResource = startingResource;
+        pickUpGain = setPickUpGain;
         overheatHitbox = GameObject.Find("OverheatHitbox");
+        rb = GetComponent<Rigidbody2D>();
         //resourceUI =  .Find("health");
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -63,9 +74,9 @@ public class PlayerGPMechanics : MonoBehaviour
         healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
     }
 
-    void FixedUpdate ()
+    void FixedUpdate()
     {
-		if (!atSafeZone)
+        if (!atSafeZone)
         {
             if (!overheatActive) // If Overheat is not active, we'll drain health normally
             {
@@ -89,7 +100,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 {
                     playerHealth -= Time.deltaTime * overheatMult;
                 }
-                
+
             }
 
             //Debug.Log("HP: " + playerHealth);
@@ -100,7 +111,7 @@ public class PlayerGPMechanics : MonoBehaviour
                 if (playerHealth <= 0)
                 {
                     playerDead = true;
-                    Debug.Log("Your fire went out. Ripperoni pepperoni.");
+                    //Debug.Log("Your fire went out. Ripperoni pepperoni.");
                 }
 
                 drainTimer += Time.deltaTime;
@@ -130,16 +141,62 @@ public class PlayerGPMechanics : MonoBehaviour
                 playerHealth += Time.deltaTime * healthRestoreMult;
             }
         }
-        
-        if (playerResource > maxResource)
+
+        if (playerResource > maxResource) // If player resource goes over the maximum (def.100) for some reason, we set it to max.
         {
             playerResource = maxResource;
         }
 
-        if (playerResource < 0)
+        if (playerResource < 0) // If player resource goes below zero, we set it to zero.
         {
             playerResource = 0;
         }
 
-	}
+        if (playerDead) // If player is flagged as dead, we run the reset command,
+        {
+            ResetPlayer();
+            Debug.Log("You're dead dawg");
+        }
+
+        if (updrafting)
+        {
+            //rb.velocity = new Vector2(0f, updraftVelocity);
+            rb.AddForce(new Vector2(0f, updraftVelocity));
+        }
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "RefuelZone")
+        {
+            atSafeZone = true;
+            Debug.Log("Entered Safe Zone");
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "RefuelZone")
+        {
+            atSafeZone = false;
+            Debug.Log("Left Safe Zone");
+        }
+    }
+
+    public void ResetPlayer() // Method we can call to in any script to reset the player.
+    {
+        if (resetHealth) // Reset player health if it's enabled in engine
+        {
+            playerHealth = startingHealth;
+        }
+
+        if (resetResource) // Reset player resource to starting resource if enabled.
+        {
+            playerResource = startingResource;
+        }
+        
+        player.transform.position = CheckpointHandler.lastCheckpoint;
+        playerDead = false; // Flip players death tag back
+    }
 }
