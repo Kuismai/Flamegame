@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class Bonfire : MonoBehaviour
 {
-    public static bool isLit = true;
+    private static bool isLit = false;
+    private GameObject updraftBox;
 
     void Start()
     {
-        
+        updraftBox = GameObject.Find("UpdraftBox");
     }
 
     private void FixedUpdate()
     {
-        //if (stuff happens)
+        if (isLit)
+        {
+            updraftBox.SetActive(true);
+        }
+
+        else if (!isLit)
+        {
+            updraftBox.SetActive(false);
+        }
+
+        //else if (!isLit)
         //{
-        //    We lit the bruh up
+        //    updraftBox.SetActive(false);
         //}
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (isLit)
         {
@@ -28,7 +39,14 @@ public class Bonfire : MonoBehaviour
                 PlayerGPMechanics.updrafting = true;
             }
         }
-        
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "OverheatHitbox")
+        {
+            isLit = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
