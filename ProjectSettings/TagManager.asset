@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Firefly20
+  - Firefly
   - DropletExit
   - RefuelZone
   layers:
@@ -52,4 +54,7 @@ TagManager:
     locked: 0
   - name: Overheat
     uniqueID: 3097416091
+    locked: 0
+  - name: Firefly
+    uniqueID: 1772930903
     locked: 0
