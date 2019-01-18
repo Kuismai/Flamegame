@@ -98,7 +98,7 @@ namespace UnityStandardAssets._2D
                 move = (crouch ? move*m_CrouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
-                //m_Anim.SetFloat("Speed", Mathf.Abs(move));
+                animator.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
                 m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed*airSpeed, m_Rigidbody2D.velocity.y);
