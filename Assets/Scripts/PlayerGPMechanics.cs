@@ -22,6 +22,7 @@ public class PlayerGPMechanics : MonoBehaviour
     public static float playerHealth = 100f;
     public static float playerResource = 0f;
     public static float maxResource = 100f;
+    public static float maxHealth = 100f;
     public static bool playerDead = false;
     public static bool atSafeZone = false;
     public static bool overheatActive = false;
@@ -42,15 +43,22 @@ public class PlayerGPMechanics : MonoBehaviour
     public bool resetResource = true;
 
     // Variables for handling light aura
-    GameObject playerLight;
-    GameObject playerLightOH;
+    public SpriteRenderer playerLight;
+    Color playerLightColor;
+    public float playerLightGradMin = 0.5f;
+    public float playerLightGradMax = 0.8f;
+    public float playerLightFadeSec = 0.1f;
+    float playerLightCoef;
+
+    //public GameObject playerAura;
+    //float playerAuraScale;
 
 
 
     void Awake()
     {
-        playerLight = GameObject.Find("LightMask");
-        playerLightOH = GameObject.Find("LightMaskOH");
+        //playerAura = GameObject.Find("Aura");
+        playerLightColor.a = playerLightGradMax;
         player = GameObject.Find("PlayerCharacter");
         playerHealth = startingHealth;
         playerResource = startingResource;
@@ -67,17 +75,36 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             overheatActive = true;
             overheatHitbox.SetActive(true);
-            playerLight.SetActive(false);
-            playerLightOH.SetActive(true);
         }
 
         else if (!Input.GetButton("Fire3")) // If <Shift> is released, Overheat is deactivated
         {
             overheatActive = false;
             overheatHitbox.SetActive(false);
-            playerLight.SetActive(true);
-            playerLightOH.SetActive(false);
         }
+
+        if (overheatActive)
+        {
+            if (playerLightColor.a > playerLightGradMin)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+            }
+            
+        }
+
+        else if (!overheatActive)
+        {
+            playerLightColor.a = playerLightCoef;
+
+            if (playerLightColor.a < playerLightCoef) // playerLightGradMax
+            {
+                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+            }
+        }
+
+        playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+        //playerLightColor.a = playerLightCoef;
+        playerLight.color = playerLightColor;
 
         resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
         healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
@@ -154,6 +181,11 @@ public class PlayerGPMechanics : MonoBehaviour
         if (playerResource > maxResource) // If player resource goes over the maximum (def.100) for some reason, we set it to max.
         {
             playerResource = maxResource;
+        }
+
+        if (playerHealth > maxHealth) // If player health goes over the maximum (def. 100) for some reason, we set it to max.
+        {
+            playerHealth = maxHealth;
         }
 
         if (playerResource < 0) // If player resource goes below zero, we set it to zero.
