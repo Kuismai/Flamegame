@@ -29,7 +29,6 @@ public class PlayerGPMechanics : MonoBehaviour
     private Rigidbody2D rb;
     public static bool updrafting = false;
     public float updraftVelocity = 100f;
-    //private bool jumping;
 
     public GameObject overheatHitbox;
     public Text resourceUI;
@@ -42,10 +41,16 @@ public class PlayerGPMechanics : MonoBehaviour
     public bool resetHealth = true;
     public bool resetResource = true;
 
+    // Variables for handling light aura
+    GameObject playerLight;
+    GameObject playerLightOH;
+
 
 
     void Awake()
     {
+        playerLight = GameObject.Find("LightMask");
+        playerLightOH = GameObject.Find("LightMaskOH");
         player = GameObject.Find("PlayerCharacter");
         playerHealth = startingHealth;
         playerResource = startingResource;
@@ -62,12 +67,16 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             overheatActive = true;
             overheatHitbox.SetActive(true);
+            playerLight.SetActive(false);
+            playerLightOH.SetActive(true);
         }
 
         else if (!Input.GetButton("Fire3")) // If <Shift> is released, Overheat is deactivated
         {
             overheatActive = false;
             overheatHitbox.SetActive(false);
+            playerLight.SetActive(true);
+            playerLightOH.SetActive(false);
         }
 
         resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
