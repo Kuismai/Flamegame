@@ -13,11 +13,20 @@ public class ResourcePickUp : MonoBehaviour
 
         if (collision.gameObject.tag == "Player") // If the object colliding with resource pickup has the Player-tag
         {
-            if (PlayerGPMechanics.playerResource >= 100)
+            if (PlayerGPMechanics.playerResource >= PlayerGPMechanics.maxResource)
             {
-                PlayerGPMechanics.playerHealth += PlayerGPMechanics.pickUpGain;
-                gameObject.SetActive(false);
-                Debug.Log("Restored " + PlayerGPMechanics.pickUpGain + " health");
+                if (PlayerGPMechanics.playerHealth >= PlayerGPMechanics.maxHealth)
+                {
+                    Debug.Log("Health and Resource full.");
+                }
+
+                else if (PlayerGPMechanics.playerHealth < PlayerGPMechanics.maxHealth)
+                {
+                    PlayerGPMechanics.playerHealth += PlayerGPMechanics.pickUpGain;
+                    gameObject.SetActive(false);
+                    Debug.Log("Restored " + PlayerGPMechanics.pickUpGain + " health");
+                }
+                
             }
 
             else if (PlayerGPMechanics.playerResource < 100)
