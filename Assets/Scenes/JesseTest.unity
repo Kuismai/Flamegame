@@ -774,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &506502922
 Transform:
   m_ObjectHideFlags: 0
@@ -923,6 +923,108 @@ Prefab:
         type: 2}
       propertyPath: startingHealth
       value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150671468245096, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150671468245096, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212283114751426724, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 212283114751426724, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.4359116
+      objectReference: {fileID: 0}
+    - target: {fileID: 212283114751426724, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 212283114751426724, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: playerAuraSprite
+      value: 
+      objectReference: {fileID: 1321416924}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorFull.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorFull.g
+      value: 0.9777254
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorFull.b
+      value: 0.740566
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorFull.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorMid.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorMid.g
+      value: 0.6300465
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorMid.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorMid.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorLow.r
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorLow.g
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorLow.b
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorLow.a
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: auraColorBlendTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150671468245096, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
@@ -1196,7 +1298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &824652089
 Transform:
   m_ObjectHideFlags: 0
@@ -1206,7 +1308,7 @@ Transform:
   m_GameObject: {fileID: 824652088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5000001, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 351349902}
   m_RootOrder: 5
@@ -1248,7 +1350,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e3dd556e9f2fd67409462e9c7e4427de, type: 3}
-  m_Color: {r: 0.5754717, g: 0.012916097, b: 0.008143453, a: 0.32941177}
+  m_Color: {r: 0.5754717, g: 0.012916097, b: 0.008143453, a: 0.6}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1821,6 +1923,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e0d5a899bb7334f9d012b300e7eba1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!212 &1321416924 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212283114751426724, guid: 81723178f4122dc46b137bb45aaf50f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 534421508}
 --- !u!1001 &1375721110
 Prefab:
   m_ObjectHideFlags: 0
