@@ -25,7 +25,7 @@ public class PlayerGPMechanics : MonoBehaviour
     public static float maxHealth = 100f;
     public static bool playerDead = false;
     public static bool atSafeZone = false;
-    public static bool overheatActive = false;
+    public static bool overheatActive;
 
     private Rigidbody2D rb;
     public static bool updrafting = false;
@@ -34,6 +34,8 @@ public class PlayerGPMechanics : MonoBehaviour
     public GameObject overheatHitbox;
     public Text resourceUI;
     public Text healthUI;
+    public Text alphaUI;
+    public Text targetAlphaUI;
 
     private float drainTimer = 0;
 
@@ -45,11 +47,13 @@ public class PlayerGPMechanics : MonoBehaviour
     // Variables for handling light aura
     public SpriteRenderer playerLight;
     Color playerLightColor;
+    public float playerOHAlpha = 0.4f;
+    public float overheatAlphaFadeMult = 2f;
     public float playerLightGradMin = 0.5f;
     public float playerLightGradMax = 0.8f;
     public float playerLightFadeSec = 0.1f;
-    float playerLightCoef;
-
+    //float playerLightCoef;
+    float targetLightAlpha;
     //public GameObject playerAura;
     //float playerAuraScale;
 
@@ -65,6 +69,7 @@ public class PlayerGPMechanics : MonoBehaviour
         pickUpGain = setPickUpGain;
         overheatHitbox = GameObject.Find("OverheatHitbox");
         rb = GetComponent<Rigidbody2D>();
+        overheatActive = false;
         //resourceUI =  .Find("health");
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -74,40 +79,22 @@ public class PlayerGPMechanics : MonoBehaviour
         if (Input.GetButton("Fire3")) // Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
         {
             overheatActive = true;
-            overheatHitbox.SetActive(true);
+            
         }
 
         else if (!Input.GetButton("Fire3")) // If <Shift> is released, Overheat is deactivated
         {
             overheatActive = false;
-            overheatHitbox.SetActive(false);
-        }
-
-        if (overheatActive)
-        {
-            if (playerLightColor.a > playerLightGradMin)
-            {
-                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
-            }
             
         }
 
-        else if (!overheatActive)
-        {
-            playerLightColor.a = playerLightCoef;
+        PlayerLight();
 
-            if (playerLightColor.a < playerLightCoef) // playerLightGradMax
-            {
-                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
-            }
-        }
-
-        playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
-        //playerLightColor.a = playerLightCoef;
-        playerLight.color = playerLightColor;
-
+        // Debug UI
         resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
         healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
+        alphaUI.text = "Light alpha: " + playerLightColor.a; //Mathf.RoundToInt(playerLightColor.a);
+        targetAlphaUI.text = "Target alpha: " + targetLightAlpha; //Mathf.RoundToInt(playerLightColor.a);
     }
 
     void FixedUpdate()
@@ -239,5 +226,55 @@ public class PlayerGPMechanics : MonoBehaviour
         
         player.transform.position = CheckpointHandler.lastCheckpoint;
         playerDead = false; // Flip players death tag back
+    }
+
+    public void PlayerLight()
+    {
+        //targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+
+        targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
+
+        if (targetLightAlpha > 1)
+        {
+            targetLightAlpha = 1;
+        }
+        else if (targetLightAlpha < 0)
+        {
+            targetLightAlpha = 0;
+        }
+
+        if (overheatActive)
+        {
+            overheatHitbox.SetActive(true);
+
+            if (playerLightColor.a > playerOHAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
+            }
+        }
+
+        else if (!overheatActive)
+        {
+            overheatHitbox.SetActive(false);
+            //playerLightColor.a = playerLightCoef;
+            //targetLightAlpha = playerLightCoef;
+
+            if (playerLightColor.a < targetLightAlpha) // playerLightGradMax / playerLightCoef
+            {
+                //playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+            }
+
+            else if (playerLightColor.a > targetLightAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+            }
+
+            //playerLightColor.a = targetLightAlpha;
+        }
+
+        //playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+        //playerLightColor.a = playerLightCoef;
+        playerLight.color = playerLightColor;
     }
 }
