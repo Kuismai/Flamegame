@@ -26,12 +26,14 @@ public class PlayerGPMechanics : MonoBehaviour
     public static bool playerDead = false;
     public static bool atSafeZone = false;
     public static bool overheatActive;
+    bool debugShow = false;
 
     private Rigidbody2D rb;
     public static bool updrafting = false;
     public float updraftVelocity = 100f;
 
     public GameObject overheatHitbox;
+    public GameObject debugUI;
     public Text resourceUI;
     public Text healthUI;
     public Text alphaUI;
@@ -54,14 +56,21 @@ public class PlayerGPMechanics : MonoBehaviour
     public float playerLightFadeSec = 0.1f;
     //float playerLightCoef;
     float targetLightAlpha;
-    //public GameObject playerAura;
-    //float playerAuraScale;
+
+    // Player Light Aura stuff
+    public GameObject playerAura;
+    public GameObject playerAuraHigh;
+    public GameObject playerAuraLow;
+    float playerAuraScale;
 
 
 
     void Awake()
     {
-        //playerAura = GameObject.Find("Aura");
+        debugUI = GameObject.Find("DebugUI");
+        playerAura = GameObject.Find("Aura");
+        playerAuraHigh = GameObject.Find("AuraHigh");
+        playerAuraLow = GameObject.Find("AuraLow");
         playerLightColor.a = playerLightGradMax;
         player = GameObject.Find("PlayerCharacter");
         playerHealth = startingHealth;
@@ -88,7 +97,9 @@ public class PlayerGPMechanics : MonoBehaviour
             
         }
 
-        PlayerLight();
+        DebugUI();
+        
+        PlayerLight();  
 
         // Debug UI
         resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
@@ -192,6 +203,8 @@ public class PlayerGPMechanics : MonoBehaviour
             rb.AddForce(new Vector2(0f, updraftVelocity));
         }
 
+        AuraHandler();
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -276,5 +289,55 @@ public class PlayerGPMechanics : MonoBehaviour
         //playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
         //playerLightColor.a = playerLightCoef;
         playerLight.color = playerLightColor;
+    }
+
+    public void DebugUI()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            if (!debugShow)
+            {
+                debugShow = true;
+            }
+
+            else if (debugShow)
+            {
+                debugShow = false;
+            }
+        }
+
+        if (debugShow)
+        {
+            debugUI.SetActive(true);
+        }
+
+        else if (!debugShow)
+        {
+            debugUI.SetActive(false);
+        }
+    }
+
+    void AuraHandler()
+    {
+        if (playerHealth >= 50)
+        {
+            playerAuraHigh.SetActive(true);
+            playerAura.SetActive(false);
+            playerAuraLow.SetActive(false);
+        }
+
+        else if (playerHealth >= 10 && playerHealth < 50)
+        {
+            playerAuraHigh.SetActive(false);
+            playerAura.SetActive(true);
+            playerAuraLow.SetActive(false);
+        }
+
+        else if (playerHealth < 10)
+        {
+            playerAuraHigh.SetActive(false);
+            playerAura.SetActive(false);
+            playerAuraLow.SetActive(true);
+        }
     }
 }
