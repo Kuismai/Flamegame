@@ -31,7 +31,7 @@ public class BurnScript : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name == "OverheatHitbox" || collision.name == "Burn Hitbox")
+        if (collision.name == "OverheatHitbox" || collision.name == "BurnHitbox")
         {
             burnTimer -= Time.deltaTime;
 

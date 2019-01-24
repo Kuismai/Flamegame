@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4078962680258754}
   - component: {fileID: 58065098325576054}
   m_Layer: 9
-  m_Name: Burn Hitbox
+  m_Name: BurnHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
