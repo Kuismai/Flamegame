@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UnityStandardAssets._2D
 {
@@ -7,6 +8,7 @@ namespace UnityStandardAssets._2D
     
     {
         public Animator animator;
+        public UnityEvent Landing;
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -16,7 +18,6 @@ namespace UnityStandardAssets._2D
         [SerializeField] float initialJump = 2f;
         public Rigidbody2D rigidBody;
         float speedLimiter = 0.01f;
-
         public float jumpTime;
         private float jumpTimer;
 
@@ -50,6 +51,7 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
+                animator.SetBool("IsFalling", false);
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -118,12 +120,13 @@ namespace UnityStandardAssets._2D
             }
 
             // If the player should jump...
-            if (m_Grounded && jump) // && m_Anim.GetBool("Ground")
+            if (m_Grounded && jump) // && animator.GetBool("IsJumping");
             {
                 jumpTimer = jumpTime;
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                //m_Anim.SetBool("Ground", false);
+                animator.SetTrigger("IsJumping");
+                animator.SetBool("IsFalling", true);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * initialJump)); // , ForceMode2D.Impulse
             }
 
@@ -132,6 +135,15 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 jumpTimer -= Time.deltaTime;
             }
+        }
+        // Player Landing event
+        public void OnLanding()
+        {
+            if (m_Grounded)
+            {
+                animator.SetTrigger("IsJumping");
+            }
+            Debug.Log("landed");
         }
 
 
