@@ -43,7 +43,7 @@ public class Bonfire : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "OverheatHitbox")
+        if (collision.gameObject.tag == "OverheatHitbox" || collision.name == "BurnHitbox")
         {
             isLit = true;
         }
