@@ -35,17 +35,22 @@ public class PlayerGPMechanics : MonoBehaviour
 
     // Object references for UI and overheat hitbox
     public GameObject overheatHitbox;
+    GameObject deathScreen;
+    GameObject pauseScreen;
     public GameObject debugUI;
     public Text resourceUI;
     public Text healthUI;
     public Text alphaUI;
     public Text targetAlphaUI;
+    private bool paused = false;
 
     // Misc. helper variables
     private float drainTimer = 0;
 
     // Variables for ResetPlayer
     GameObject player;
+    public float deathScreenDelay = 0.5f;
+    private float deathScreenTimer = 0f;
     public bool resetHealth = true;
     public bool resetResource = true;
 
@@ -72,6 +77,7 @@ public class PlayerGPMechanics : MonoBehaviour
     public Color auraColorFull = new Color(0.77f, 0.65f, 0.30f, 0.6f);
     public Color auraColorMid = new Color(0.55f, 0.44f, 0.08f, 0.6f);
     public Color auraColorLow = new Color(0.57f, 0.01f, 0.01f, 0.6f);
+    public Color auraColorOverheat = new Color(0f, 0f, 0f, 0.9f);
     private Color auraTargetColor;
     public float auraColorBlendMult = 1f;
     float playerAuraScale;
@@ -80,8 +86,14 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void Awake()
     {
-        // Initialize Debug UI reference
+        // Initialize UI
         debugUI = GameObject.Find("DebugUI");
+        debugUI.SetActive(false);
+        deathScreen = GameObject.Find("DeathScreenUI");
+        deathScreen.SetActive(false);
+        pauseScreen = GameObject.Find("PauseMenuUI");
+        pauseScreen.SetActive(false);
+        Cursor.visible = false;
 
         // Initialize Aura references
         playerAura = GameObject.Find("Aura");
@@ -124,6 +136,8 @@ public class PlayerGPMechanics : MonoBehaviour
             overheatActive = false;
         }
 
+        PauseHandler();
+        
         OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive
         
         PlayerLight(); // Handles light overlay changes
@@ -218,8 +232,20 @@ public class PlayerGPMechanics : MonoBehaviour
 
         if (playerDead) // If player is flagged as dead, we run the reset command,
         {
-            ResetPlayer();
+            deathScreen.SetActive(true);
+            Time.timeScale = 0.25f;
             Debug.Log("You're dead dawg");
+
+            if (deathScreenTimer >= deathScreenDelay)
+            {
+                Time.timeScale = 1f;
+                ResetPlayer();
+                playerDead = false; // Flip players death flag back
+                deathScreen.SetActive(false);
+                deathScreenTimer = 0f;
+            }
+
+            deathScreenTimer += Time.deltaTime;
         }
 
         if (updrafting)
@@ -263,7 +289,6 @@ public class PlayerGPMechanics : MonoBehaviour
         }
         
         player.transform.position = CheckpointHandler.lastCheckpoint;
-        playerDead = false; // Flip players death tag back
     }
 
     public void OverheatFlipper()
@@ -338,22 +363,16 @@ public class PlayerGPMechanics : MonoBehaviour
             if (!debugShow)
             {
                 debugShow = true;
+                debugUI.SetActive(true);
+                Cursor.visible = true;
             }
 
             else if (debugShow)
             {
                 debugShow = false;
+                debugUI.SetActive(false);
+                Cursor.visible = false;
             }
-        }
-
-        if (debugShow)
-        {
-            debugUI.SetActive(true);
-        }
-
-        else if (!debugShow)
-        {
-            debugUI.SetActive(false);
         }
     }
 
@@ -380,12 +399,12 @@ public class PlayerGPMechanics : MonoBehaviour
         //    playerAuraLow.SetActive(true);
         //}
 
-        if (playerHealth >= highHP)
+        if (playerHealth >= highHP && !overheatActive)
         {
             auraTargetColor = auraColorFull;
         }
 
-        else if (playerHealth >= midHP && playerHealth < highHP)
+        else if (playerHealth >= midHP && playerHealth < highHP && !overheatActive)
         {
             auraTargetColor = auraColorMid;
         }
@@ -395,9 +414,40 @@ public class PlayerGPMechanics : MonoBehaviour
             auraTargetColor = auraColorLow;
         }
 
+        else if (overheatActive && playerHealth > midHP)
+        {
+            auraTargetColor = auraColorOverheat;
+        }
+
         playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, auraTargetColor, Time.deltaTime * auraColorBlendMult);
         // playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, playerAuraColor, 1f);
         // playerAuraSprite.color = playerAuraColor;
         // playerAuraColor placeholder
+    }
+
+    void PauseHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                paused = true;
+                pauseScreen.SetActive(true);
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+                // Play menu music
+                // do other stuff while paused
+            }
+
+            else if (paused)
+            {
+                paused = false;
+                pauseScreen.SetActive(false);
+                Cursor.visible = false;
+                Time.timeScale = 1f;
+                // We return to the land of the living
+            }
+
+        }
     }
 }

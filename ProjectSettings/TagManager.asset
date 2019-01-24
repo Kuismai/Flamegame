@@ -44,7 +44,6 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
   - name: Background
     uniqueID: 1863788763
@@ -66,4 +65,7 @@ TagManager:
     locked: 0
   - name: Firefly
     uniqueID: 1772930903
+    locked: 0
+  - name: 
+    uniqueID: 2851010709
     locked: 0
