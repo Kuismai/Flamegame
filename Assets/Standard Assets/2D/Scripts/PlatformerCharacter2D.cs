@@ -4,15 +4,21 @@ using UnityEngine;
 namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
+    
     {
+        public Animator animator;
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
         [SerializeField] private float airSpeed = 0.25f;
+        [SerializeField] float initialJump = 2f;
         public Rigidbody2D rigidBody;
         float speedLimiter = 0.01f;
+
+        public float jumpTime;
+        private float jumpTimer;
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -92,7 +98,7 @@ namespace UnityStandardAssets._2D
                 move = (crouch ? move*m_CrouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
-                //m_Anim.SetFloat("Speed", Mathf.Abs(move));
+                animator.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
                 m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed*airSpeed, m_Rigidbody2D.velocity.y);
@@ -114,10 +120,17 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump) // && m_Anim.GetBool("Ground")
             {
+                jumpTimer = jumpTime;
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * initialJump)); // , ForceMode2D.Impulse
+            }
+
+            if (jump && jumpTimer > 0)
+            {
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpTimer -= Time.deltaTime;
             }
         }
 
