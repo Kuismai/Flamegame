@@ -21,10 +21,10 @@ TagManager:
   - 
   - 
   - Player
+  - Rope
   - Overheat
   - PickUp
   - IgnoreJump
-  - 
   - 
   - 
   - 
@@ -51,12 +51,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+ElleBranch
+  - name: Deco
+    uniqueID: 4254362257
+  - name: LightMask
+    uniqueID: 2922513117
+    locked: 0
   - name: Player
     uniqueID: 2962640819
     locked: 0
   - name: Overheat
     uniqueID: 3097416091
     locked: 0
+  - name: LightSource
+    uniqueID: 3601226367
+    locked: 0
   - name: Firefly
     uniqueID: 1772930903
+    locked: 0
+  - name: 
+    uniqueID: 2851010709
     locked: 0

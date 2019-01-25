@@ -19,39 +19,107 @@ public class PlayerGPMechanics : MonoBehaviour
     [SerializeField] float setPickUpGain = 10f; // Set how much resource we gain for each resource pickup
 
     public static float pickUpGain; // How much resource we gain from a single pickup
-    public static float playerHealth = 100f;
-    public static float playerResource = 0f;
-    public static float maxResource = 100f;
-    public static bool playerDead = false;
-    public static bool atSafeZone = false;
-    public static bool overheatActive = false;
+    public static float playerHealth = 100f; // Current health
+    public static float playerResource = 0f; // Current resource
+    public static float maxResource = 100f; // Limit to how much resource we can have
+    public static float maxHealth = 100f; // Limit to how much health we can have
+    public static bool playerDead = false; // Helper flag for player death
+    public static bool atSafeZone = false; // Helper flag for checking if we're at a safe zone
+    public static bool overheatActive = false; // Helper flag to check if we're overheating
+    bool debugShow = false; // Helper flag for flipping debug UI on and off
 
+    // Variables for handling updraft
     private Rigidbody2D rb;
     public static bool updrafting = false;
     public float updraftVelocity = 100f;
-    //private bool jumping;
 
+    // Object references for UI and overheat hitbox
     public GameObject overheatHitbox;
+    GameObject deathScreen;
+    GameObject pauseScreen;
+    public GameObject debugUI;
     public Text resourceUI;
     public Text healthUI;
+    public Text alphaUI;
+    public Text targetAlphaUI;
+    private bool paused = false;
 
+    // Misc. helper variables
     private float drainTimer = 0;
 
     // Variables for ResetPlayer
     GameObject player;
+    public float deathScreenDelay = 0.5f;
+    private float deathScreenTimer = 0f;
     public bool resetHealth = true;
     public bool resetResource = true;
+
+    // Variables for handling light aura overlay changes
+    public SpriteRenderer playerLight;
+    Color playerLightColor;
+    public float playerOHAlpha = 0.4f;
+    public float overheatAlphaFadeMult = 2f;
+    public float playerLightGradMin = 0.5f;
+    public float playerLightGradMax = 0.8f;
+    public float playerLightFadeSec = 0.1f;
+    //float playerLightCoef;
+    float targetLightAlpha;
+
+    // Player Light Aura stuff
+    public GameObject playerAura;
+    //public GameObject playerAuraHigh;
+    //public GameObject playerAuraLow;
+    public SpriteRenderer playerAuraSprite;
+    Color playerAuraColor;
+    public float highHP = 50f;
+    public float midHP = 20f;
+    public float lowHP = 10f;
+    public Color auraColorFull = new Color(0.77f, 0.65f, 0.30f, 0.6f);
+    public Color auraColorMid = new Color(0.55f, 0.44f, 0.08f, 0.6f);
+    public Color auraColorLow = new Color(0.57f, 0.01f, 0.01f, 0.6f);
+    public Color auraColorOverheat = new Color(0f, 0f, 0f, 0.9f);
+    private Color auraTargetColor;
+    public float auraColorBlendMult = 1f;
+    float playerAuraScale;
 
 
 
     void Awake()
     {
+        // Initialize UI
+        debugUI = GameObject.Find("DebugUI");
+        debugUI.SetActive(false);
+        deathScreen = GameObject.Find("DeathScreenUI");
+        deathScreen.SetActive(false);
+        pauseScreen = GameObject.Find("PauseMenuUI");
+        pauseScreen.SetActive(false);
+        Cursor.visible = false;
+
+        // Initialize Aura references
+        playerAura = GameObject.Find("Aura");
+        //playerAuraHigh = GameObject.Find("AuraHigh");
+        //playerAuraLow = GameObject.Find("AuraLow");
+
+        // Setting Light overlay alpha to set value
+        playerLightColor.a = playerLightGradMax;
+
+        // Initialize player character reference
         player = GameObject.Find("PlayerCharacter");
+
+        // Set Health and Resource pools to set values
         playerHealth = startingHealth;
         playerResource = startingResource;
+
+        // Set how much resource / HP we gain from pickups
         pickUpGain = setPickUpGain;
+
+        // Initialize object reference to Overheat hitbox
         overheatHitbox = GameObject.Find("OverheatHitbox");
+
+        // Initialize object reference to players Rigidbody component
         rb = GetComponent<Rigidbody2D>();
+
+
         //resourceUI =  .Find("health");
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -61,17 +129,23 @@ public class PlayerGPMechanics : MonoBehaviour
         if (Input.GetButton("Fire3")) // Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
         {
             overheatActive = true;
-            overheatHitbox.SetActive(true);
         }
 
         else if (!Input.GetButton("Fire3")) // If <Shift> is released, Overheat is deactivated
         {
             overheatActive = false;
-            overheatHitbox.SetActive(false);
         }
 
-        resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Health and Resource values
-        healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth);
+        PauseHandler();
+        
+        OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive
+        
+        PlayerLight(); // Handles light overlay changes
+
+        DebugUI(); // Handles toggling of Debug UI
+
+        // Debug UI
+        
     }
 
     void FixedUpdate()
@@ -115,7 +189,6 @@ public class PlayerGPMechanics : MonoBehaviour
                 }
 
                 drainTimer += Time.deltaTime;
-                // Sumtin' fishy right here boiii
 
                 if (drainTimer >= drainDelay && playerResource > 0) // Here we drain resource every drainDelay (default 5 seconds) and add the same amount to health, based on determined resourceDrain variable (Default is 5)
                 {
@@ -147,6 +220,11 @@ public class PlayerGPMechanics : MonoBehaviour
             playerResource = maxResource;
         }
 
+        if (playerHealth > maxHealth) // If player health goes over the maximum (def. 100) for some reason, we set it to max.
+        {
+            playerHealth = maxHealth;
+        }
+
         if (playerResource < 0) // If player resource goes below zero, we set it to zero.
         {
             playerResource = 0;
@@ -154,8 +232,20 @@ public class PlayerGPMechanics : MonoBehaviour
 
         if (playerDead) // If player is flagged as dead, we run the reset command,
         {
-            ResetPlayer();
+            deathScreen.SetActive(true);
+            Time.timeScale = 0.25f;
             Debug.Log("You're dead dawg");
+
+            if (deathScreenTimer >= deathScreenDelay)
+            {
+                Time.timeScale = 1f;
+                ResetPlayer();
+                playerDead = false; // Flip players death flag back
+                deathScreen.SetActive(false);
+                deathScreenTimer = 0f;
+            }
+
+            deathScreenTimer += Time.deltaTime;
         }
 
         if (updrafting)
@@ -163,6 +253,8 @@ public class PlayerGPMechanics : MonoBehaviour
             //rb.velocity = new Vector2(0f, updraftVelocity);
             rb.AddForce(new Vector2(0f, updraftVelocity));
         }
+
+        AuraHandler();
 
     }
 
@@ -197,6 +289,165 @@ public class PlayerGPMechanics : MonoBehaviour
         }
         
         player.transform.position = CheckpointHandler.lastCheckpoint;
-        playerDead = false; // Flip players death tag back
+    }
+
+    public void OverheatFlipper()
+    {
+        if (overheatActive)
+        {
+            overheatHitbox.SetActive(true);
+        }
+
+        else if (!overheatActive)
+        {
+            overheatHitbox.SetActive(false);
+        }
+    }
+
+    public void PlayerLight()
+    {
+        //targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+
+        targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
+
+        if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
+        {
+            targetLightAlpha = 1;
+        }
+        else if (targetLightAlpha < 0)
+        {
+            targetLightAlpha = 0;
+        }
+
+        if (overheatActive)
+        {
+            if (playerLightColor.a > playerOHAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
+            }
+        }
+
+        else if (!overheatActive)
+        {
+            //playerLightColor.a = playerLightCoef;
+            //targetLightAlpha = playerLightCoef;
+
+            if (playerLightColor.a < targetLightAlpha) // playerLightGradMax / playerLightCoef
+            {
+                //playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+            }
+
+            else if (playerLightColor.a > targetLightAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+            }
+
+            //playerLightColor.a = targetLightAlpha;
+        }
+
+        //playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+        //playerLightColor.a = playerLightCoef;
+        playerLight.color = playerLightColor;
+    }
+
+    public void DebugUI()
+    {
+        resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Resource value
+        healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth); // Updating UI for Health value
+        alphaUI.text = "Light alpha: " + playerLightColor.a; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show value of light overlay Alpha
+        targetAlphaUI.text = "Target alpha: " + targetLightAlpha; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show what the value of Alpha should be
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            if (!debugShow)
+            {
+                debugShow = true;
+                debugUI.SetActive(true);
+                Cursor.visible = true;
+            }
+
+            else if (debugShow)
+            {
+                debugShow = false;
+                debugUI.SetActive(false);
+                Cursor.visible = false;
+            }
+        }
+    }
+
+    void AuraHandler()
+    {
+        //if (playerHealth >= 50)
+        //{
+        //    playerAuraHigh.SetActive(true);
+        //    playerAura.SetActive(false);
+        //    playerAuraLow.SetActive(false);
+        //}
+
+        //else if (playerHealth >= 10 && playerHealth < 50)
+        //{
+        //    playerAuraHigh.SetActive(false);
+        //    playerAura.SetActive(true);
+        //    playerAuraLow.SetActive(false);
+        //}
+
+        //else if (playerHealth < 10)
+        //{
+        //    playerAuraHigh.SetActive(false);
+        //    playerAura.SetActive(false);
+        //    playerAuraLow.SetActive(true);
+        //}
+
+        if (playerHealth >= highHP && !overheatActive)
+        {
+            auraTargetColor = auraColorFull;
+        }
+
+        else if (playerHealth >= midHP && playerHealth < highHP && !overheatActive)
+        {
+            auraTargetColor = auraColorMid;
+        }
+
+        else if (playerHealth < midHP)
+        {
+            auraTargetColor = auraColorLow;
+        }
+
+        else if (overheatActive && playerHealth > midHP)
+        {
+            auraTargetColor = auraColorOverheat;
+        }
+
+        playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, auraTargetColor, Time.deltaTime * auraColorBlendMult);
+        // playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, playerAuraColor, 1f);
+        // playerAuraSprite.color = playerAuraColor;
+        // playerAuraColor placeholder
+    }
+
+    void PauseHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                paused = true;
+                pauseScreen.SetActive(true);
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+                // Play menu music
+                // do other stuff while paused
+            }
+
+            else if (paused)
+            {
+                paused = false;
+                pauseScreen.SetActive(false);
+                Cursor.visible = false;
+                Time.timeScale = 1f;
+                // We return to the land of the living
+            }
+
+        }
     }
 }
