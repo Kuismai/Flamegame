@@ -14,7 +14,7 @@ public class RopeScript : MonoBehaviour {
     {
         if (firstConnectPoint != null && lastConnectPoint != null)
         {
-            CalculateDistance(firstConnectPoint, lastConnectPoint);
+            //CalculateDistance(firstConnectPoint, lastConnectPoint);
         }
 
         CreateNewRope(ropeLength, firstConnectPoint, lastConnectPoint);
@@ -71,6 +71,7 @@ public class RopeScript : MonoBehaviour {
     {
         // Calculates distance between two game objects:
         float distance = Vector2.Distance(obj1.transform.position, obj2.transform.position);
+        
         Debug.Log("Distance between " + obj1.name + " and " + obj2.name + ": " + distance);
 
         // Set rope length based on distance:

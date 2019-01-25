@@ -23,11 +23,6 @@ public class Bonfire : MonoBehaviour
         {
             updraftBox.SetActive(false);
         }
-
-        //else if (!isLit)
-        //{
-        //    updraftBox.SetActive(false);
-        //}
     }
 
     public void OnTriggerStay2D(Collider2D collision)
@@ -46,6 +41,7 @@ public class Bonfire : MonoBehaviour
         if (collision.gameObject.tag == "OverheatHitbox" || collision.name == "BurnHitbox")
         {
             isLit = true;
+            gameObject.GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 
