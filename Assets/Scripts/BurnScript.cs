@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class BurnScript : MonoBehaviour
 {
-
     public float burnTimerMax; // starting value for burn timer
     public float onFireThreshold; // if burnTimer is under this value, the object starts to burn by itself (is on fire)
     public float burnTimer; // current burn value
     public bool isOnFire; // is the object on on fire or not
-
 
     // Use this for initialization
     void Start()
@@ -65,11 +63,8 @@ public class BurnScript : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             gameObject.GetComponentInChildren<CircleCollider2D>().enabled = true;
 
-            //ParticleSystem.EmissionModule em = gameObject.GetComponentInChildren<ParticleSystem>().emission;
-            //em.enabled = true;
-
             // For smoke effect:
-            //gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            gameObject.GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 
@@ -80,10 +75,7 @@ public class BurnScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         gameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
 
-        //ParticleSystem.EmissionModule em = gameObject.GetComponentInChildren<ParticleSystem>().emission;
-        //em.enabled = false;
-
         // For smoke effect:
-        //gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
 }
