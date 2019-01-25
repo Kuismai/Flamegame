@@ -16,7 +16,6 @@ namespace UnityStandardAssets._2D
         [SerializeField] float initialJump = 2f;
         public Rigidbody2D rigidBody;
         float speedLimiter = 0.01f;
-
         public float jumpTime;
         private float jumpTimer;
 
@@ -25,9 +24,9 @@ namespace UnityStandardAssets._2D
         private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        //private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+
 
         private void Awake()
         {
@@ -42,7 +41,7 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
             m_Grounded = false;
-
+            animator.SetBool("IsFalling", true);
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -50,6 +49,7 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
+                animator.SetBool("IsFalling", false);
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -73,6 +73,8 @@ namespace UnityStandardAssets._2D
                 m_MaxSpeed = 10;
                 speedLimiter = 0.01f;
             }
+            AnimationControl();
+
         }
 
 
@@ -118,12 +120,12 @@ namespace UnityStandardAssets._2D
             }
 
             // If the player should jump...
-            if (m_Grounded && jump) // && m_Anim.GetBool("Ground")
+            if (m_Grounded && jump) //&& animator.SetTrigger("IsJumping");
             {
                 jumpTimer = jumpTime;
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                //m_Anim.SetBool("Ground", false);
+                animator.SetTrigger("IsJumping");
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * initialJump)); // , ForceMode2D.Impulse
             }
 
@@ -135,6 +137,21 @@ namespace UnityStandardAssets._2D
         }
 
 
+
+        // Player Landing event
+        /*public void OnLanding()
+        {
+            if (m_Grounded)
+            {
+                animator.SetTrigger("IsJumping");
+            }
+            Debug.Log("landed");
+        }*/
+
+        //PlayerGPMechanics.overheatActive
+
+        
+
         private void Flip()
         {
             // Switch the way the player is labelled as facing.
@@ -145,5 +162,18 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
+        public void AnimationControl()
+        {
+            if (!Input.GetButton("Fire3"))
+            {
+                animator.SetLayerWeight(1, 0);
+            }
+            else
+            {
+                animator.SetLayerWeight(1, 1);
+            }
+        }
+        
     }
 }
