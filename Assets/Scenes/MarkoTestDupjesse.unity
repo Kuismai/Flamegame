@@ -864,7 +864,7 @@ Prefab:
     - target: {fileID: 114249124101139228, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
       propertyPath: Landing.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114249124101139228, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
@@ -874,7 +874,7 @@ Prefab:
     - target: {fileID: 114249124101139228, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
       propertyPath: Landing.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnLanding
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114249124101139228, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
