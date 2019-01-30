@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106835164035606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.644428, y: 2.328385, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.1, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4424528498889234}
@@ -6129,8 +6129,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    tilesX: 8
-    tilesY: 4
+    tilesX: 4
+    tilesY: 1
     animationType: 0
     rowIndex: 0
     cycles: 1
@@ -8361,7 +8361,7 @@ ParticleSystem:
       type: 0
       properties: 0
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0
     light: {fileID: 0}
     randomDistribution: 1
@@ -9339,7 +9339,7 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -9461,7 +9461,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.25}
-  m_ConnectedAnchor: {x: -7.644428, y: 2.2783852}
+  m_ConnectedAnchor: {x: -4.65932, y: 0.6782552}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
