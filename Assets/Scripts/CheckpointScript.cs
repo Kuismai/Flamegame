@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckpointScript : MonoBehaviour {
+public class CheckpointScript : MonoBehaviour
+{
 
     private Vector2 spawnPoint;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         spawnPoint = gameObject.GetComponentInChildren<Transform>().transform.position;
 	}
 
@@ -22,11 +24,11 @@ public class CheckpointScript : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //TODO: exit safezone?
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        //TODO: exit safezone?
+    //    }
+    //}
 }
