@@ -42,9 +42,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackgroundTiles
-    uniqueID: 438329943
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
