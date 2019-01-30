@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 61732244541106908}
   - component: {fileID: 212607671386977872}
   - component: {fileID: 114536931744927648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: RefuelZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4995109225473518}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210498391645400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.92, y: -0.377, z: 0}
+  m_LocalPosition: {x: -17.12, y: -4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4995109225473518}

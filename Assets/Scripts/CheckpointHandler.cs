@@ -6,10 +6,16 @@ public class CheckpointHandler : MonoBehaviour {
 
     private GameObject player;
     public static Vector2 lastCheckpoint;
+    private PlayerGPMechanics gpm;
 
-	// Use this for initialization
-	void Start () {
-        player = GameObject.Find("Player");
+    private void Awake()
+    {
+        gpm = GetComponent<PlayerGPMechanics>();
+    }
+
+    // Use this for initialization
+    void Start () {
+        player = GameObject.Find("PlayerCharacter");
         lastCheckpoint = player.transform.position;
     }
 	
@@ -19,12 +25,13 @@ public class CheckpointHandler : MonoBehaviour {
         //pressing R will return the player to last checkpoint:
         if (Input.GetKeyDown(KeyCode.R))
         {
-            restartFromLastCheckpoint();
+            //restartFromLastCheckpoint();
+            gpm.ResetPlayer();
         }
 	}
 
-    void restartFromLastCheckpoint()
-    {
-        player.transform.position = lastCheckpoint;
-    }
+    //void restartFromLastCheckpoint()
+    //{
+    //    player.transform.position = CheckpointHandler.lastCheckpoint;
+    //}
 }

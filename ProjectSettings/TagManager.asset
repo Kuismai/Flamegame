@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
+  - UpdraftBox
+  - RefuelZone
+  - OverheatHitbox
+  - DropletExit
   layers:
   - Default
   - TransparentFX
@@ -15,10 +18,10 @@ TagManager:
   - 
   - 
   - Player
+  - Rope
   - Overheat
-  - 
-  - 
-  - 
+  - PickUp
+  - IgnoreJump
   - 
   - 
   - 
@@ -41,4 +44,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2596760961
+    locked: 0
+  - name: LightMask
+    uniqueID: 4281277875
+    locked: 0
+  - name: Player
+    uniqueID: 679418529
+    locked: 0
+  - name: Overheat
+    uniqueID: 1614413645
+    locked: 0
+  - name: LightSource
+    uniqueID: 901975419
+    locked: 0
+  - name: Firefly
+    uniqueID: 3774398405
     locked: 0
