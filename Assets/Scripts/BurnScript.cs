@@ -8,11 +8,14 @@ public class BurnScript : MonoBehaviour
     public float onFireThreshold; // if burnTimer is under this value, the object starts to burn by itself (is on fire)
     public float burnTimer; // current burn value
     public bool isOnFire; // is the object on on fire or not
+    GameObject flameParticles, smokeParticles;
 
     // Use this for initialization
     void Start()
     {
         burnTimer = burnTimerMax;
+        flameParticles = transform.Find("FlameParticles").gameObject;
+        smokeParticles = transform.Find("SmokeParticles").gameObject;
     }
 
     // Update is called once per frame
@@ -63,8 +66,10 @@ public class BurnScript : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             gameObject.GetComponentInChildren<CircleCollider2D>().enabled = true;
 
-            // For smoke effect:
-            gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            // For flame effect:
+            flameParticles.GetComponent<ParticleSystem>().Play();
+            // For smoke effect (currently disabled):
+            //smokeParticles.GetComponent<ParticleSystem>().Play();
         }
     }
 
@@ -75,7 +80,9 @@ public class BurnScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         gameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
 
-        // For smoke effect:
-        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        // For flame effect:
+        flameParticles.GetComponent<ParticleSystem>().Stop();
+        // For smoke effect (currently disabled):
+        //smokeParticles.GetComponent<ParticleSystem>().Stop();
     }
 }
