@@ -425,7 +425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1288177013291964, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
@@ -830,7 +830,7 @@ Prefab:
       objectReference: {fileID: 2140818967}
     - target: {fileID: 1019217230373076, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
@@ -1157,71 +1157,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1210498391645400, guid: c17d235f4db6d8a489be164107be362c, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524665816765874, guid: c17d235f4db6d8a489be164107be362c, type: 2}
-      propertyPath: m_TagString
-      value: RefuelZone
-      objectReference: {fileID: 0}
-    - target: {fileID: 61732244541106908, guid: c17d235f4db6d8a489be164107be362c,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 1.3500596
-      objectReference: {fileID: 0}
-    - target: {fileID: 61732244541106908, guid: c17d235f4db6d8a489be164107be362c,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.98815465
-      objectReference: {fileID: 0}
-    - target: {fileID: 61732244541106908, guid: c17d235f4db6d8a489be164107be362c,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.086582184
-      objectReference: {fileID: 0}
-    - target: {fileID: 61732244541106908, guid: c17d235f4db6d8a489be164107be362c,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.9895363
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524665816765874, guid: c17d235f4db6d8a489be164107be362c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17d235f4db6d8a489be164107be362c, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &903315869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1524665816765874, guid: c17d235f4db6d8a489be164107be362c,
-    type: 2}
-  m_PrefabInternal: {fileID: 903315868}
---- !u!61 &903315870
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 903315869}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05074787, y: 0.26008415}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4313602, y: 3.169485}
-  m_EdgeRadius: 0
 --- !u!1001 &928936403
 Prefab:
   m_ObjectHideFlags: 0
