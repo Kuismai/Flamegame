@@ -231,12 +231,12 @@ public class PlayerGPMechanics : MonoBehaviour
         if (playerDead) // If player is flagged as dead, we run the reset command,
         {
             deathScreen.SetActive(true);
-            Time.timeScale = 0.25f;
+            //Time.timeScale = 0.25f;
             Debug.Log("You're dead dawg");
 
             if (deathScreenTimer >= deathScreenDelay)
             {
-                Time.timeScale = 1f;
+                //Time.timeScale = 1f;
                 ResetPlayer();
                 playerDead = false; // Flip players death flag back
                 deathScreen.SetActive(false);
