@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b38e17ffd999be247ac731ee7ab10c51
+guid: bf9047fcc8a0b684eb1968d3d6f484f2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Candleholdertops_0
-    21300002: Candleholdertops_1
-    21300004: Candleholdertops_2
+    21300000: TheUltimateWall_0
+    21300002: TheUltimateWall_1
+    21300004: TheUltimateWall_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -142,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Candleholdertops_0
+      name: TheUltimateWall_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 238
-        width: 96
-        height: 39
+        x: 0
+        y: 2500
+        width: 1640
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +156,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 558af731bffbea546acc9f0e94647e2d
+      spriteID: 06d8cd8d40a245a448f282626bdc4c88
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candleholdertops_1
+      name: TheUltimateWall_1
       rect:
         serializedVersion: 2
-        x: 404
-        y: 232
-        width: 92
-        height: 40
+        x: 0
+        y: 500
+        width: 1640
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +176,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03a1018f5b1934b449f076479c986cfd
+      spriteID: cfaa00ee74c2a834b93942da8e674d60
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candleholdertops_2
+      name: TheUltimateWall_2
       rect:
         serializedVersion: 2
-        x: 216
-        y: 185
-        width: 95
-        height: 39
+        x: 0
+        y: 0
+        width: 1640
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7258f6a28cd0e8f47a9ccc607159c09a
+      spriteID: 27eba993c85b0b645af3f50584a29d70
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 185a693dfee07e4449fb3e95fd24e37c
+    spriteID: d267358c463fc7643b1b45f1b139eb06
     vertices: []
     indices: 
     edges: []
