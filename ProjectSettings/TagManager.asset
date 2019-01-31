@@ -8,6 +8,8 @@ TagManager:
   - RefuelZone
   - OverheatHitbox
   - DropletExit
+  - Firefly
+  - Firefly20
   layers:
   - Default
   - TransparentFX
@@ -59,6 +61,9 @@ TagManager:
     locked: 0
   - name: LightMask
     uniqueID: 4281277875
+    locked: 0
+  - name: PlayerAura
+    uniqueID: 1238471721
     locked: 0
   - name: Player
     uniqueID: 679418529
