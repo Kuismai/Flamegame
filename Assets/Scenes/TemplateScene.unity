@@ -236,6 +236,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114030666559782154, guid: b48052bbb2db7714d96ca507d7bce7cc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48052bbb2db7714d96ca507d7bce7cc, type: 2}
   m_IsPrefabAsset: 0
@@ -1394,7 +1399,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1288177013291964, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060927282794602, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
@@ -1438,10 +1447,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1235971760127780, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
-      propertyPath: m_Layer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
       propertyPath: debugUI
@@ -1449,14 +1454,14 @@ Prefab:
       objectReference: {fileID: 1206720698}
     - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
-      propertyPath: healthUI
-      value: 
-      objectReference: {fileID: 1295458114}
-    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
-        type: 2}
       propertyPath: resourceUI
       value: 
       objectReference: {fileID: 1561438951}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1295458114}
     - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
         type: 2}
       propertyPath: alphaUI
@@ -1467,10 +1472,6 @@ Prefab:
       propertyPath: targetAlphaUI
       value: 
       objectReference: {fileID: 978693432}
-    - target: {fileID: 1019217230373076, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
   m_IsPrefabAsset: 0
