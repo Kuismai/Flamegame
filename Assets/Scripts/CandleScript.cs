@@ -5,10 +5,12 @@ using UnityEngine;
 public class CandleScript : MonoBehaviour
 {
     GameObject fire;
+    //Transform child; 
 
     private void Awake()
     {
-        fire = GameObject.Find("Fire");
+        fire = GameObject.Find("Fire"); // gameObject.transform.Find()
+        //child = gameObject.transform.Find();
         fire.SetActive(false);
     }
 
