@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106835164035606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 2.49, y: 1.85, z: 1}
   m_LocalScale: {x: 0.1, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4424528498889234}
@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 1139726794990338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4087427997054506}
   m_RootOrder: 2
@@ -280,7 +280,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -1101,9 +1101,9 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.5
-          inSlope: 0.5
-          outSlope: 0.5
+          value: 0.502512
+          inSlope: 0.49748802
+          outSlope: 0.49748802
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
@@ -1111,8 +1111,8 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 0.5
-          outSlope: 0.5
+          inSlope: 0.49748802
+          outSlope: 0.49748802
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -4822,7 +4822,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5643,7 +5643,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0.76382256
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9461,7 +9461,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.25}
-  m_ConnectedAnchor: {x: -4.65932, y: 0.6782552}
+  m_ConnectedAnchor: {x: 2.49, y: 1.8000001}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
