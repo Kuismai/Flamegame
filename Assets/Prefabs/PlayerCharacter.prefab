@@ -252,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019217230373076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.78562, y: -3.028345, z: -0.5613845}
+  m_LocalPosition: {x: -132.8, y: -4, z: -0.5613845}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4063972652959448}
@@ -550,10 +550,10 @@ MonoBehaviour:
   resetResource: 1
   playerLight: {fileID: 212707692071305896}
   playerOHAlpha: 0.6
-  overheatAlphaFadeMult: 2
-  playerLightGradMin: 0.6
+  overheatAlphaFadeMult: 0.5
+  playerLightGradMin: 0.5
   playerLightGradMax: 1
-  playerLightFadeSec: 0.8
+  playerLightFadeSec: 0.5
   playerAura: {fileID: 0}
   playerAuraSprite: {fileID: 212283114751426724}
   highHP: 50

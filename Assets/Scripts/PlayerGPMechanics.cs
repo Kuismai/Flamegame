@@ -140,9 +140,9 @@ public class PlayerGPMechanics : MonoBehaviour
         
         OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive (boolean)
         
-        //PlayerLight(); // Handles light overlay changes
+        PlayerLight(); // Handles light overlay changes
 
-        DebugUI(); // Handles toggling of Debug UI
+        DebugUI(); // Handles Debug UI
         
     }
 
@@ -302,46 +302,42 @@ public class PlayerGPMechanics : MonoBehaviour
         }
     }
 
-    //public void PlayerLight()
-    //{
-    //    targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
+    public void PlayerLight()
+    {
+        targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
 
-    //    if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
-    //    {
-    //        targetLightAlpha = 1;
-    //    }
-    //    else if (targetLightAlpha < 0)
-    //    {
-    //        targetLightAlpha = 0;
-    //    }
+        if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
+        {
+            targetLightAlpha = 1;
+        }
+        else if (targetLightAlpha < 0)
+        {
+            targetLightAlpha = 0;
+        }
 
-    //    if (overheatActive)
-    //    {
-    //        if (playerLightColor.a > playerOHAlpha)
-    //        {
-    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
-    //        }
-    //    }
+        if (overheatActive)
+        {
+            if (playerLightColor.a > playerOHAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
+            }
+        }
 
-    //    else if (!overheatActive)
-    //    {
-    //        if (playerLightColor.a < targetLightAlpha)
-    //        {
-    //            playerLightColor.a += Time.deltaTime * playerLightFadeSec;
-    //        }
+        else if (!overheatActive)
+        {
+            if (playerLightColor.a < targetLightAlpha)
+            {
+                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+            }
 
-    //        else if (playerLightColor.a > targetLightAlpha)
-    //        {
-    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
-    //        }
-    //    }
+            else if (playerLightColor.a > targetLightAlpha)
+            {
+                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+            }
+        }
 
-    //    playerLight.color = playerLightColor;
-
-
-
-
-    //}
+        playerLight.color = playerLightColor;
+    }
 
     public void DebugUI()
     {

@@ -11,6 +11,4 @@ public class WaterPuddleKZ : MonoBehaviour
             PlayerGPMechanics.playerDead = true;
         }
     }
-
-
 }
