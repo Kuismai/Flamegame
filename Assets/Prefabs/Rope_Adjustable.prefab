@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeLength: 30
-  ropePiece: {fileID: 1949215763465708, guid: 394ceeebd182af840affd148d9d84275, type: 2}
+  ropePiece: {fileID: 1106835164035606, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
   spawnDistance: 0.1
   firstConnectPoint: {fileID: 0}
   lastConnectPoint: {fileID: 0}
+  firstConnectedAnchor: {x: 0, y: 0}
+  lastConnectedAnchor: {x: 0, y: 0}

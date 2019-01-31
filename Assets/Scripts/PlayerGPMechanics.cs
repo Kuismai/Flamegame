@@ -136,15 +136,13 @@ public class PlayerGPMechanics : MonoBehaviour
             overheatActive = false;
         }
 
-        PauseHandler();
+        PauseHandler(); // Handles toggling of Pause
         
-        OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive
+        OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive (boolean)
         
-        PlayerLight(); // Handles light overlay changes
+        //PlayerLight(); // Handles light overlay changes
 
         DebugUI(); // Handles toggling of Debug UI
-
-        // Debug UI
         
     }
 
@@ -233,12 +231,12 @@ public class PlayerGPMechanics : MonoBehaviour
         if (playerDead) // If player is flagged as dead, we run the reset command,
         {
             deathScreen.SetActive(true);
-            Time.timeScale = 0.25f;
+            //Time.timeScale = 0.25f;
             Debug.Log("You're dead dawg");
 
             if (deathScreenTimer >= deathScreenDelay)
             {
-                Time.timeScale = 1f;
+                //Time.timeScale = 1f;
                 ResetPlayer();
                 playerDead = false; // Flip players death flag back
                 deathScreen.SetActive(false);
@@ -304,52 +302,46 @@ public class PlayerGPMechanics : MonoBehaviour
         }
     }
 
-    public void PlayerLight()
-    {
-        //targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
+    //public void PlayerLight()
+    //{
+    //    targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
 
-        targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
+    //    if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
+    //    {
+    //        targetLightAlpha = 1;
+    //    }
+    //    else if (targetLightAlpha < 0)
+    //    {
+    //        targetLightAlpha = 0;
+    //    }
 
-        if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
-        {
-            targetLightAlpha = 1;
-        }
-        else if (targetLightAlpha < 0)
-        {
-            targetLightAlpha = 0;
-        }
+    //    if (overheatActive)
+    //    {
+    //        if (playerLightColor.a > playerOHAlpha)
+    //        {
+    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
+    //        }
+    //    }
 
-        if (overheatActive)
-        {
-            if (playerLightColor.a > playerOHAlpha)
-            {
-                playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
-            }
-        }
+    //    else if (!overheatActive)
+    //    {
+    //        if (playerLightColor.a < targetLightAlpha)
+    //        {
+    //            playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+    //        }
 
-        else if (!overheatActive)
-        {
-            //playerLightColor.a = playerLightCoef;
-            //targetLightAlpha = playerLightCoef;
+    //        else if (playerLightColor.a > targetLightAlpha)
+    //        {
+    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+    //        }
+    //    }
 
-            if (playerLightColor.a < targetLightAlpha) // playerLightGradMax / playerLightCoef
-            {
-                //playerLightColor.a += Time.deltaTime * playerLightFadeSec;
-                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
-            }
+    //    playerLight.color = playerLightColor;
 
-            else if (playerLightColor.a > targetLightAlpha)
-            {
-                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
-            }
 
-            //playerLightColor.a = targetLightAlpha;
-        }
 
-        //playerLightCoef = playerLightGradMax - (playerHealth / maxHealth * 0.3f);
-        //playerLightColor.a = playerLightCoef;
-        playerLight.color = playerLightColor;
-    }
+
+    //}
 
     public void DebugUI()
     {
@@ -378,27 +370,6 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void AuraHandler()
     {
-        //if (playerHealth >= 50)
-        //{
-        //    playerAuraHigh.SetActive(true);
-        //    playerAura.SetActive(false);
-        //    playerAuraLow.SetActive(false);
-        //}
-
-        //else if (playerHealth >= 10 && playerHealth < 50)
-        //{
-        //    playerAuraHigh.SetActive(false);
-        //    playerAura.SetActive(true);
-        //    playerAuraLow.SetActive(false);
-        //}
-
-        //else if (playerHealth < 10)
-        //{
-        //    playerAuraHigh.SetActive(false);
-        //    playerAura.SetActive(false);
-        //    playerAuraLow.SetActive(true);
-        //}
-
         if (playerHealth >= highHP && !overheatActive)
         {
             auraTargetColor = auraColorFull;
@@ -420,9 +391,6 @@ public class PlayerGPMechanics : MonoBehaviour
         }
 
         playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, auraTargetColor, Time.deltaTime * auraColorBlendMult);
-        // playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, playerAuraColor, 1f);
-        // playerAuraSprite.color = playerAuraColor;
-        // playerAuraColor placeholder
     }
 
     void PauseHandler()

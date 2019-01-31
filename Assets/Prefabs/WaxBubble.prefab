@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4441561515117370}
   - component: {fileID: 212597161442601770}
   - component: {fileID: 95161831151295176}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaxBubbleAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4581379214639334}
   - component: {fileID: 70617380834877374}
   - component: {fileID: 114835863825740144}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaxBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}

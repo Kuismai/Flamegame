@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150671468245096}
   - component: {fileID: 212283114751426724}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4381040137836798}
   - component: {fileID: 70722273022341790}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: OverheatHitbox
   m_TagString: OverheatHitbox
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515649264457892}
   - component: {fileID: 212930212022890112}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: OverheatIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,8 +212,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235971760127780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.61, z: 0}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4408345239574032}
   m_RootOrder: 4
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 39
+    m_Bits: 55
   airSpeed: 1
   initialJump: 2
   rigidBody: {fileID: 50085967402668788}
@@ -549,7 +549,7 @@ MonoBehaviour:
   resetHealth: 1
   resetResource: 1
   playerLight: {fileID: 212707692071305896}
-  playerOHAlpha: 0.5
+  playerOHAlpha: 0.6
   overheatAlphaFadeMult: 2
   playerLightGradMin: 0.6
   playerLightGradMax: 1
@@ -629,8 +629,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -13689421
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e3dd556e9f2fd67409462e9c7e4427de, type: 3}
   m_Color: {r: 0.54901963, g: 0.4359116, b: 0.078431375, a: 0.6}
@@ -675,8 +675,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1332326477
-  m_SortingLayer: 2
+  m_SortingLayerID: 679418529
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d1960734aefc99e408e7c19aa0e16073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -722,7 +722,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1372454179
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1c6160ab7bd256a49b2a64d2d1865a7f, type: 3}
   m_Color: {r: 0.11764706, g: 0.03355287, b: 0.03355287, a: 0.8627451}
@@ -768,7 +768,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1372454179
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f54ae08a44a69c740a47bb71966dbdfc, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
@@ -906,7 +906,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1197551205
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6fd56ffe32ece3b4494aee7f12f4382f, type: 3}
   m_Color: {r: 0.8113208, g: 0, b: 0, a: 1}
