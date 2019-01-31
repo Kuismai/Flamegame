@@ -57,13 +57,14 @@ public class PlayerGPMechanics : MonoBehaviour
     // Variables for handling light aura overlay changes
     public SpriteRenderer playerLight;
     Color playerLightColor;
-    public float playerOHAlpha = 0.4f;
+    public float playerOHAlpha = 0.5f;
     public float overheatAlphaFadeMult = 2f;
-    public float playerLightGradMin = 0.5f;
-    public float playerLightGradMax = 0.8f;
-    public float playerLightFadeSec = 0.1f;
+    public float playerLightGradMin = 0.6f;
+    public float playerLightGradMax = 1f;
+    public float playerLightFadeSec = 0.5f;
     //float playerLightCoef;
     float targetLightAlpha;
+    public float pLightBlendTime = 5f;
 
     // Player Light Aura stuff
     public GameObject playerAura;
@@ -139,8 +140,10 @@ public class PlayerGPMechanics : MonoBehaviour
         PauseHandler(); // Handles toggling of Pause
         
         OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive (boolean)
-        
-        PlayerLight(); // Handles light overlay changes
+
+        //PlayerLight(); // Handles light overlay changes, legacy code. Simply the worst.
+
+        PlayerLightLerp(); // New version of light handler, uses Lerp.
 
         DebugUI(); // Handles Debug UI
         
@@ -302,41 +305,67 @@ public class PlayerGPMechanics : MonoBehaviour
         }
     }
 
-    public void PlayerLight()
+    //public void PlayerLight() // Legacy version, don't use.
+    //{
+    //    targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
+
+    //    if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
+    //    {
+    //        targetLightAlpha = 1;
+    //    }
+    //    else if (targetLightAlpha < 0)
+    //    {
+    //        targetLightAlpha = 0;
+    //    }
+
+    //    if (overheatActive)
+    //    {
+    //        if (playerLightColor.a > playerOHAlpha)
+    //        {
+    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
+    //        }
+    //    }
+
+    //    else if (!overheatActive)
+    //    {
+    //        if (playerLightColor.a < targetLightAlpha)
+    //        {
+    //            playerLightColor.a += Time.deltaTime * playerLightFadeSec;
+    //        }
+
+    //        else if (playerLightColor.a > targetLightAlpha)
+    //        {
+    //            playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
+    //        }
+    //    }
+
+    //    playerLight.color = playerLightColor;
+    //}
+
+    public void PlayerLightLerp()
     {
         targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
 
-        if (targetLightAlpha > 1) // Failsafes if alpha values go beyond the allowed range
+        if (targetLightAlpha > 1f) // Failsafes if alpha values go beyond the allowed range
         {
-            targetLightAlpha = 1;
+            targetLightAlpha = 1f;
         }
         else if (targetLightAlpha < 0)
         {
-            targetLightAlpha = 0;
+            targetLightAlpha = 0f;
         }
 
         if (overheatActive)
         {
-            if (playerLightColor.a > playerOHAlpha)
-            {
-                playerLightColor.a -= Time.deltaTime * playerLightFadeSec * overheatAlphaFadeMult;
-            }
+            playerLightColor.a = playerOHAlpha;
         }
 
         else if (!overheatActive)
         {
-            if (playerLightColor.a < targetLightAlpha)
-            {
-                playerLightColor.a += Time.deltaTime * playerLightFadeSec;
-            }
-
-            else if (playerLightColor.a > targetLightAlpha)
-            {
-                playerLightColor.a -= Time.deltaTime * playerLightFadeSec;
-            }
+            playerLightColor.a = targetLightAlpha;
         }
-
-        playerLight.color = playerLightColor;
+        
+        playerLight.color = Color.Lerp(playerLight.color, playerLightColor, Time.deltaTime * pLightBlendTime);
     }
 
     public void DebugUI()
