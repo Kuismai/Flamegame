@@ -4,65 +4,40 @@ using UnityEngine;
 
 public class Bonfire : MonoBehaviour
 {
-    private static bool isLit = false;
+    public bool isLit = false;
     private GameObject updraftBox;
-    //private GameObject smokeFX;
+    private SpriteRenderer[] flames;
 
     void Start()
     {
-        updraftBox = GameObject.Find("UpdraftBox");
-        //smokeFX = GameObject.Find("SmokeParticles");
-    }
+        updraftBox = gameObject.transform.Find("UpdraftBox").gameObject;
 
-    private void FixedUpdate()
-    {
-        if (isLit)
+        // Flames:
+        flames = new SpriteRenderer[updraftBox.transform.childCount];
+        for (int i = 0; i < flames.Length; i++)
         {
-            updraftBox.SetActive(true);
-        }
-
-        else if (!isLit)
-        {
-            updraftBox.SetActive(false);
-        }
-
-        //Debug.Log("" + isLit);
-    }
-
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (isLit)
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                PlayerGPMechanics.updrafting = true;
-            }
+            flames[i] = updraftBox.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>();
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    // When the bonfire sets on fire:
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "OverheatHitbox" || collision.name == "BurnHitbox")
         {
-            //isLit = true;
             if (!isLit)
             {
-                gameObject.GetComponentInChildren<ParticleSystem>().Play();
                 isLit = true;
-            }
-            //gameObject.GetComponentInChildren<ParticleSystem>().Play();
-            //smokeFX.GetComponent<ParticleSystem>().Play();
-        }
+                updraftBox.GetComponent<BoxCollider2D>().enabled = true;
 
-    }
+                // Activate smoke particles: 
+                gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (isLit)
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                PlayerGPMechanics.updrafting = false;
+                // Activate flames:
+                for (int i = 0; i < flames.Length; i++)
+                {
+                    flames[i].enabled = true;
+                }
             }
         }
     }
