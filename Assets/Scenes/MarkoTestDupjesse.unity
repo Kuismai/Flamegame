@@ -403,6 +403,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 534421508}
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
+--- !u!114 &219092748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114874920760312032, guid: bdef2df88b5f20c4492d28f059b7f69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 386264772}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &228147148
 Prefab:
   m_ObjectHideFlags: 0
@@ -712,6 +718,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1909035497}
+    - target: {fileID: 1288177013291964, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdef2df88b5f20c4492d28f059b7f69c, type: 2}
   m_IsPrefabAsset: 0
@@ -843,7 +853,7 @@ Prefab:
         type: 2}
       propertyPath: healthUI
       value: 
-      objectReference: {fileID: 1297370729}
+      objectReference: {fileID: 219092748}
     - target: {fileID: 1019217230373076, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -880,6 +890,26 @@ Prefab:
         type: 2}
       propertyPath: Landing.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: alphaUI
+      value: 
+      objectReference: {fileID: 1297370729}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: targetAlphaUI
+      value: 
+      objectReference: {fileID: 1185737312}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: playerLightGradMin
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689755534997976, guid: 81723178f4122dc46b137bb45aaf50f8,
+        type: 2}
+      propertyPath: playerOHAlpha
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81723178f4122dc46b137bb45aaf50f8, type: 2}
@@ -1263,6 +1293,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e0d5a899bb7334f9d012b300e7eba1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1185737312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114610303991712664, guid: bdef2df88b5f20c4492d28f059b7f69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 386264772}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1271175052
 Prefab:
   m_ObjectHideFlags: 0

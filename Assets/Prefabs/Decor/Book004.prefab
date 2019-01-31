@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4044423373887544}
   - component: {fileID: 212958305574402532}
   m_Layer: 0
-  m_Name: WallscrollThin004
+  m_Name: Book004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 314998333
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 5431d9754e436cf4ba6b4c832657c1eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
