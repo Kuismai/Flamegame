@@ -7863,6 +7863,48 @@ Prefab:
     - {fileID: 114069281794412920, guid: db11ecfb2a7587c4f891f31ced1ba949, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: db11ecfb2a7587c4f891f31ced1ba949, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1822827866
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087427997054506, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e72a63c19e391db4f8c5c3ab598045c5, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &1825388504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4581379214639334, guid: e5e0d5a899bb7334f9d012b300e7eba1,
