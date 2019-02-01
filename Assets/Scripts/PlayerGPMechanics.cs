@@ -80,6 +80,7 @@ public class PlayerGPMechanics : MonoBehaviour
     public Color auraColorMid = new Color(0.55f, 0.44f, 0.08f, 0.6f);
     public Color auraColorLow = new Color(0.57f, 0.01f, 0.01f, 0.6f);
     public Color auraColorOverheat = new Color(0f, 0f, 0f, 0.9f);
+    public Color auraColorDead = new Color(0f, 0f, 0f, 0f);
     private Color auraTargetColor;
     public float auraColorBlendMult = 1f;
     float playerAuraScale;
@@ -350,24 +351,33 @@ public class PlayerGPMechanics : MonoBehaviour
     {
         targetLightAlpha = playerLightGradMax - (playerHealth / maxHealth * (playerLightGradMax - playerLightGradMin));
 
-        if (targetLightAlpha > 1f) // Failsafes if alpha values go beyond the allowed range
+        if (!playerDead)
+        {
+            if (targetLightAlpha > 1f) // Failsafes if alpha values go beyond the allowed range
+            {
+                targetLightAlpha = 1f;
+            }
+            else if (targetLightAlpha < 0)
+            {
+                targetLightAlpha = 0f;
+            }
+
+            if (overheatActive)
+            {
+                playerLightColor.a = playerOHAlpha;
+            }
+
+            else if (!overheatActive)
+            {
+                playerLightColor.a = targetLightAlpha;
+            }
+        }
+
+        else if (playerDead)
         {
             targetLightAlpha = 1f;
         }
-        else if (targetLightAlpha < 0)
-        {
-            targetLightAlpha = 0f;
-        }
-
-        if (overheatActive)
-        {
-            playerLightColor.a = playerOHAlpha;
-        }
-
-        else if (!overheatActive)
-        {
-            playerLightColor.a = targetLightAlpha;
-        }
+        
         
         playerLight.color = Color.Lerp(playerLight.color, playerLightColor, Time.deltaTime * pLightBlendTime);
     }
@@ -399,24 +409,32 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void AuraHandler()
     {
-        if (playerHealth >= highHP && !overheatActive)
+        if (!playerDead)
         {
-            auraTargetColor = auraColorFull;
+            if (playerHealth >= highHP && !overheatActive)
+            {
+                auraTargetColor = auraColorFull;
+            }
+
+            else if (playerHealth >= midHP && playerHealth < highHP && !overheatActive)
+            {
+                auraTargetColor = auraColorMid;
+            }
+
+            else if (playerHealth < midHP)
+            {
+                auraTargetColor = auraColorLow;
+            }
+
+            else if (overheatActive && playerHealth > midHP)
+            {
+                auraTargetColor = auraColorOverheat;
+            }
         }
 
-        else if (playerHealth >= midHP && playerHealth < highHP && !overheatActive)
+        else if (playerDead)
         {
-            auraTargetColor = auraColorMid;
-        }
-
-        else if (playerHealth < midHP)
-        {
-            auraTargetColor = auraColorLow;
-        }
-
-        else if (overheatActive && playerHealth > midHP)
-        {
-            auraTargetColor = auraColorOverheat;
+            auraTargetColor = auraColorDead;
         }
 
         playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, auraTargetColor, Time.deltaTime * auraColorBlendMult);

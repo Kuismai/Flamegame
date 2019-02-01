@@ -916,6 +916,38 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1567400799903724, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740054799406734, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860088974694364, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062019376629850, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520634955212736, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134887810650958, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086605292794626, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977814880602548, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eaa76bcf4b6d64e8b03b0492d3da2c, type: 2}
   m_IsPrefabAsset: 0
@@ -4338,6 +4370,26 @@ Prefab:
         type: 2}
       propertyPath: hpThreshold
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067538175946214, guid: 6a6e600c684ec6648b363056c89e6b41,
+        type: 2}
+      propertyPath: deathScreenDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067538175946214, guid: 6a6e600c684ec6648b363056c89e6b41,
+        type: 2}
+      propertyPath: auraColorDead.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067538175946214, guid: 6a6e600c684ec6648b363056c89e6b41,
+        type: 2}
+      propertyPath: auraColorDead.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067538175946214, guid: 6a6e600c684ec6648b363056c89e6b41,
+        type: 2}
+      propertyPath: auraColorDead.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171736351895020, guid: 6a6e600c684ec6648b363056c89e6b41, type: 2}
       propertyPath: m_IsActive
