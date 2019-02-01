@@ -18,6 +18,7 @@ namespace UnityStandardAssets._2D
         float speedLimiter = 0.01f;
         public float jumpTime;
         private float jumpTimer;
+        private float health;
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -27,6 +28,10 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        //bool haveJumped = false;
+        //float isJumpingTimer;
+        //public float jumpAnimStaller = 0.5f;
+
 
         private void Awake()
         {
@@ -35,13 +40,42 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             //m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+            //isJumpingTimer = jumpAnimStaller;
         }
 
+        private void Update()
+        {
+            //if (Input.GetButtonDown("Jump"))
+            //{
+            //    haveJumped = true;
+            //}
+            
+            //if (haveJumped)
+            //{
+            //    animator.SetTrigger("IsJumping");
+            //    animator.SetBool("DuringJump", true);
+                
+            //    isJumpingTimer -= Time.deltaTime;
+
+            //    if (isJumpingTimer <= 0)
+            //    {
+            //        animator.SetBool("DuringJump", false);
+            //        haveJumped = false;
+            //        isJumpingTimer = jumpAnimStaller;
+            //    }
+            //}
+            
+        }
 
         private void FixedUpdate()
         {
             m_Grounded = false;
-            animator.SetBool("IsFalling", true);
+
+            if (!m_Grounded)
+            {
+                animator.SetBool("IsFalling", true);
+            }
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -74,6 +108,7 @@ namespace UnityStandardAssets._2D
                 speedLimiter = 0.01f;
             }
             AnimationControl();
+
 
         }
 
@@ -125,8 +160,9 @@ namespace UnityStandardAssets._2D
                 jumpTimer = jumpTime;
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                animator.SetTrigger("IsJumping");
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * initialJump)); // , ForceMode2D.Impulse
+
+                animator.SetTrigger("IsJumping");
             }
 
             if (jump && jumpTimer > 0)
@@ -134,6 +170,8 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 jumpTimer -= Time.deltaTime;
             }
+
+            
         }
 
 
@@ -174,6 +212,7 @@ namespace UnityStandardAssets._2D
                 animator.SetLayerWeight(1, 1);
             }
         }
-        
+
     }
+   
 }

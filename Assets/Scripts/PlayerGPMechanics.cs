@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+
 public class PlayerGPMechanics : MonoBehaviour
 {
     [SerializeField] float startingHealth = 100f; // At how much health you start with
@@ -82,6 +83,8 @@ public class PlayerGPMechanics : MonoBehaviour
     public float auraColorBlendMult = 1f;
     float playerAuraScale;
 
+    //Animator stuff
+    public Animator animator;
 
 
     void Awake()
@@ -233,14 +236,15 @@ public class PlayerGPMechanics : MonoBehaviour
         if (playerDead) // If player is flagged as dead, we run the reset command,
         {
             deathScreen.SetActive(true);
-            Time.timeScale = 0.25f;
+            //Time.timeScale = 0.25f;
             Debug.Log("You're dead dawg");
 
             if (deathScreenTimer >= deathScreenDelay)
             {
-                Time.timeScale = 1f;
+                //Time.timeScale = 1f;
                 ResetPlayer();
                 playerDead = false; // Flip players death flag back
+                animator.SetBool("AlreadyDead", false);
                 deathScreen.SetActive(false);
                 deathScreenTimer = 0f;
             }

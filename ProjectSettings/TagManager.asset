@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - OverheatHitbox
+  - RefuelZone
+  - UpdraftBox
+  - DropletExit
   - Fire
   - Firefly20
   - Firefly
-  - DropletExit
-  - RefuelZone
-  - OverheatHitbox
-  - UpdraftBox
   layers:
   - Default
   - TransparentFX
@@ -46,29 +46,23 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 1863788763
+    uniqueID: 2926022543
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-ElleBranch
-  - name: Deco
-    uniqueID: 4254362257
   - name: LightMask
-    uniqueID: 2922513117
+    uniqueID: 3153078505
     locked: 0
   - name: Player
-    uniqueID: 2962640819
+    uniqueID: 439387757
     locked: 0
   - name: Overheat
-    uniqueID: 3097416091
+    uniqueID: 1125147565
     locked: 0
   - name: LightSource
-    uniqueID: 3601226367
+    uniqueID: 3837123161
     locked: 0
   - name: Firefly
-    uniqueID: 1772930903
-    locked: 0
-  - name: 
-    uniqueID: 2851010709
+    uniqueID: 3307727945
     locked: 0
