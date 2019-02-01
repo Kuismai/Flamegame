@@ -503,7 +503,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597859743840066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.71, y: -4.62, z: -2.4832594}
+  m_LocalPosition: {x: 90.53, y: -4.62, z: -2.4832594}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4981278448094738}
@@ -1223,6 +1223,7 @@ MonoBehaviour:
   auraColorMid: {r: 1, g: 0.6300465, b: 0, a: 0.9019608}
   auraColorLow: {r: 0.57, g: 0.01, b: 0.01, a: 0.69803923}
   auraColorOverheat: {r: 0.4764151, g: 0.50721425, b: 1, a: 0.9}
+  auraColorDead: {r: 0, g: 0, b: 0, a: 0}
   auraColorBlendMult: 4
   animator: {fileID: 95928612072163362}
 --- !u!114 &114956599482928334
