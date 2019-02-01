@@ -407,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 103589903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.854225, y: -2.0774488, z: 0}
+  m_LocalPosition: {x: 48.43, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2261,6 +2261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606457150}
   - component: {fileID: 606457149}
+  - component: {fileID: 606457151}
   m_Layer: 0
   m_Name: Stairs_3
   m_TagString: Untagged
@@ -2321,12 +2322,36 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 606457148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.02179, y: -6.6522226, z: 0}
+  m_LocalPosition: {x: 31.77, y: -5.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 93
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &606457151
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606457148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.500208, y: -2.1671205}
+  - {x: -3.5083637, y: -1.2114563}
+  - {x: -1.8112068, y: -1.257555}
+  - {x: -1.8100986, y: -0.031956196}
+  - {x: -0.11111069, y: -0.098552704}
+  - {x: -0.08963394, y: 1.0633869}
+  - {x: 1.6081123, y: 1.0447049}
+  - {x: 1.6406593, y: 2.1059194}
+  - {x: 3.4034615, y: 2.0897226}
 --- !u!1 &613774613
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,7 +4651,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1405107593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1397839787}
