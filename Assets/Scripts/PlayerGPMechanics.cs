@@ -85,9 +85,24 @@ public class PlayerGPMechanics : MonoBehaviour
     public float auraColorBlendMult = 1f;
     float playerAuraScale;
 
+
+    // SFX
+    /* private AudioSource overHeatOn;
+    private AudioSource overHeatStatic;
+    private GameObject sounds; */
+
+
+
+
     //Animator stuff
     public Animator animator;
 
+    /* private void Start()
+    {
+        sounds = GameObject.Find("SFX");
+        overHeatOn = sounds.transform.Find("overHeatOn").gameObject.GetComponent<AudioSource>();
+        overHeatStatic = sounds.transform.Find("overHeatStatic").gameObject.GetComponent<AudioSource>();
+    } */
 
     void Awake()
     {
@@ -140,6 +155,8 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             overheatActive = false;
         }
+
+        // OverheatAudioHandler();
 
         PauseHandler(); // Handles toggling of Pause
         
@@ -302,11 +319,15 @@ public class PlayerGPMechanics : MonoBehaviour
         if (overheatActive)
         {
             overheatHitbox.SetActive(true);
+            //overHeatOn.Play(); //play overheat activation sound
+            // overHeatStatic.Play();
         }
 
         else if (!overheatActive)
         {
             overheatHitbox.SetActive(false);
+            // overHeatOn.Stop();
+            // overHeatStatic.Stop();
         }
     }
 
@@ -465,4 +486,17 @@ public class PlayerGPMechanics : MonoBehaviour
 
         }
     }
+
+   /* void OverheatAudioHandler()
+    {
+        if (overheatActive)
+        {
+            
+        }
+
+        if (!overheatActive)
+        {
+
+        }
+    }*/
 }
