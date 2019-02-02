@@ -87,9 +87,12 @@ public class PlayerGPMechanics : MonoBehaviour
 
 
     // SFX
-    /* private AudioSource overHeatOn;
-    private AudioSource overHeatStatic;
-    private GameObject sounds; */
+    private AudioSource overHeatOnSfx;
+    private AudioSource overHeatStaticSfx;
+    private AudioSource characterSoundSfx;
+    private GameObject sounds;
+    private GameObject overHeatStatic;
+    private GameObject characterStatic; 
 
 
 
@@ -97,12 +100,10 @@ public class PlayerGPMechanics : MonoBehaviour
     //Animator stuff
     public Animator animator;
 
-    /* private void Start()
+     private void Start()
     {
-        sounds = GameObject.Find("SFX");
-        overHeatOn = sounds.transform.Find("overHeatOn").gameObject.GetComponent<AudioSource>();
-        overHeatStatic = sounds.transform.Find("overHeatStatic").gameObject.GetComponent<AudioSource>();
-    } */
+        GetSounds();
+              } 
 
     void Awake()
     {
@@ -146,7 +147,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire3")) // Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
+        if (Input. GetButton("Fire3"))// Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
         {
             overheatActive = true;
         }
@@ -156,7 +157,7 @@ public class PlayerGPMechanics : MonoBehaviour
             overheatActive = false;
         }
 
-        // OverheatAudioHandler();
+        OverheatAudioHandler();
 
         PauseHandler(); // Handles toggling of Pause
         
@@ -319,15 +320,13 @@ public class PlayerGPMechanics : MonoBehaviour
         if (overheatActive)
         {
             overheatHitbox.SetActive(true);
-            //overHeatOn.Play(); //play overheat activation sound
-            // overHeatStatic.Play();
+       
         }
 
         else if (!overheatActive)
         {
             overheatHitbox.SetActive(false);
-            // overHeatOn.Stop();
-            // overHeatStatic.Stop();
+
         }
     }
 
@@ -487,16 +486,54 @@ public class PlayerGPMechanics : MonoBehaviour
         }
     }
 
-   /* void OverheatAudioHandler()
+    void GetSounds()
     {
-        if (overheatActive)
+        sounds = GameObject.Find("SFX");
+        overHeatStatic = GameObject.Find("overHeatStatic");
+        characterStatic = GameObject.Find("characterSound");
+
+        overHeatOnSfx = sounds.transform.Find("overHeatOn").gameObject.GetComponent<AudioSource>();
+        overHeatStaticSfx = sounds.transform.Find("overHeatStatic").gameObject.GetComponent<AudioSource>();
+        characterSoundSfx = sounds.transform.Find("characterSound").gameObject.GetComponent<AudioSource>();
+
+
+        overHeatStatic.SetActive(false);
+        characterStatic.SetActive(true);
+        
+    }
+
+    void OverheatAudioHandler()
+     {
+        bool playerAlive;
+        playerAlive = playerHealth > 0 ? true : false; // player's alive if health > 0, otherwise not
+
+        if (Input.GetButtonDown("Fire3") && playerAlive) //if shift is pressed (not held down) while player's alive
         {
+            overHeatOnSfx.Play();  //this is the activation sound for the overheat
+        }
+
+        //swtiches the player static to the overheat static 
+        if (overheatActive)
+            characterStatic.SetActive(false);
+            overHeatStatic.SetActive(true); // it's activated with the gameobject so it loops nicely.
+
+        if (!Input.GetButton("Fire3")) //if shift is not pressed, overheat-related sounds stop.
+        {
+            overHeatOnSfx.Stop();
+            overHeatStatic.SetActive(false);
+            characterStatic.SetActive(true);
+        }
+        if (!playerAlive)
+        {
+            overHeatOnSfx.Stop();
+            overHeatStatic.SetActive(false);
+            characterStatic.SetActive(false);
             
         }
+      
 
-        if (!overheatActive)
-        {
+        else
+            return;
 
-        }
-    }*/
+    }
 }
