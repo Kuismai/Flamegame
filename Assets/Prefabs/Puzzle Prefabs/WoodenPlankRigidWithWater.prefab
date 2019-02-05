@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 212036101225421548}
   - component: {fileID: 50445781384976254}
   - component: {fileID: 61874538975800208}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: WoodenPlankRigid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4764197111467588}
   - component: {fileID: 114245752973444018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645987208778054}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.154, y: 3.24, z: 0}
   m_LocalScale: {x: 2.6, y: 2.6, z: 1}
   m_Children: []

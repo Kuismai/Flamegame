@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212788196295629908}
   - component: {fileID: 58276835609903558}
   - component: {fileID: 50769731113870806}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 50635778275831800}
   - component: {fileID: 61374243783948104}
   - component: {fileID: 70903581234509114}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CageRigid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 212402386864778092}
   - component: {fileID: 58824757398459198}
   - component: {fileID: 50188995646410382}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 212945255953269054}
   - component: {fileID: 58754395217127118}
   - component: {fileID: 50106092604322452}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 212707725955034834}
   - component: {fileID: 58482414463785162}
   - component: {fileID: 50515148707238202}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 212143127584331012}
   - component: {fileID: 58240913920109908}
   - component: {fileID: 50391119284743130}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 212617670468217946}
   - component: {fileID: 58021949488794044}
   - component: {fileID: 50144538706975906}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 212811768337083556}
   - component: {fileID: 58048253092550540}
   - component: {fileID: 50208230527179960}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4166978250900306}
   - component: {fileID: 212295205787252082}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfLeftStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 212415770318060140}
   - component: {fileID: 58457142477951282}
   - component: {fileID: 50580751338004460}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4169069527430786}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfWithAttachPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4145769043907672}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659330381113668}
   - component: {fileID: 212650855798920408}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfRightStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 212936644389781072}
   - component: {fileID: 58093030719068164}
   - component: {fileID: 50491986007623176}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 212965316005402184}
   - component: {fileID: 58550749416544768}
   - component: {fileID: 50630227671200244}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 212440361505533600}
   - component: {fileID: 58118993383627562}
   - component: {fileID: 50908381019826646}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988493965353006}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfWithAttachPoints (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695689791648486}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4941575189466400}
   - component: {fileID: 212121479516432512}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfLeftStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 212072405082336898}
   - component: {fileID: 50617060295384266}
   - component: {fileID: 61201446766138938}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: WoodenPlankRigid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4919802192675474}
   - component: {fileID: 212085751219017638}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfRightStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 212098943683724166}
   - component: {fileID: 58466449940907148}
   - component: {fileID: 50352621705520600}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 212037144258171204}
   - component: {fileID: 58844200237333722}
   - component: {fileID: 50730421260420006}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463191893799666}
   - component: {fileID: 114202791683391944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475567071586130}
   - component: {fileID: 114713302384969962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 212842098271785634}
   - component: {fileID: 61910049967364946}
   - component: {fileID: 251269391226183334}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfBoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843729889495104}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 212211073449173204}
   - component: {fileID: 61055694170483104}
   - component: {fileID: 251868031734269272}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfBoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4159389797902884}
   - component: {fileID: 114173294997614952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4783210997106808}
   - component: {fileID: 114503000622322680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 212553388296296232}
   - component: {fileID: 58936075908417320}
   - component: {fileID: 50937842374155794}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4124749950364170}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4285627369006066}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4002793090611540}
   - component: {fileID: 212116511597714648}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfRightStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4067351003975774}
   - component: {fileID: 212865242951815124}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfLeftStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4351330613559416}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 212156401677015488}
   - component: {fileID: 61273846117701280}
   - component: {fileID: 251214363324442992}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfBoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321526844403566}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfWithAttachPoints (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 212622895053182234}
   - component: {fileID: 58901888323379238}
   - component: {fileID: 50663473270887556}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +999,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870027883943054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.22, y: 3.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994504973170702}
@@ -3279,14 +3279,14 @@ PlatformEffector2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881337174604774}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 220
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3297,14 +3297,14 @@ PlatformEffector2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692569505016060}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 220
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3315,14 +3315,14 @@ PlatformEffector2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733481680163532}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 220
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1

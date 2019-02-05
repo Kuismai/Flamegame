@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50145010606037572}
   - component: {fileID: 61716038706772304}
   - component: {fileID: 70735818578688194}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CageRigid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158834827264568}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CageRigidWithRope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4897245140408424}
   - component: {fileID: 114694414103032646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

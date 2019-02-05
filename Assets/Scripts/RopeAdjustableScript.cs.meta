@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 509026e49379c654d9b97d40dc3a367f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ropePiece: {fileID: 1953591131187106, guid: 4c1e69f6fbde2b6479a907255a6b1106,
+      type: 2}
+  - firstConnectPoint: {instanceID: 0}
+  - lastConnectPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
