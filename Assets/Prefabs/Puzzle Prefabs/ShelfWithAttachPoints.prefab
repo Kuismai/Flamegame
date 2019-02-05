@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212977475768518016}
   - component: {fileID: 58471720588243850}
   - component: {fileID: 50384971250899244}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212472487467830746}
   - component: {fileID: 58176105479008810}
   - component: {fileID: 50814566239700062}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212018980677808996}
   - component: {fileID: 58770943765230774}
   - component: {fileID: 50436364542919626}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4412912773105866}
   - component: {fileID: 212820593216623662}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfRightStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 212838910185793870}
   - component: {fileID: 61662098149019736}
   - component: {fileID: 251938577089709204}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfBoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4083966484359986}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 212351005602527914}
   - component: {fileID: 58629985617959490}
   - component: {fileID: 50053275499432502}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4058448007337130}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfWithAttachPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192844424493510}
   - component: {fileID: 212602000933772570}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfLeftStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 212046777904969106}
   - component: {fileID: 58194825236518142}
   - component: {fileID: 50665649695919196}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4436626900629752}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}

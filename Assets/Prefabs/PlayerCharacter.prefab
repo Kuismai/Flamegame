@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4381040137836798}
   - component: {fileID: 70722273022341790}
+  - component: {fileID: 114596912778284984}
   m_Layer: 10
   m_Name: OverheatHitbox
   m_TagString: OverheatHitbox
@@ -528,6 +529,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d7b34a3bb2d4e4b926e7e729d3d410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114596912778284984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639629525903996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e931399ffed6a447ab93b40bbae7d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114689755534997976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,6 +589,7 @@ MonoBehaviour:
   auraColorMid: {r: 1, g: 0.6300465, b: 0, a: 0.9019608}
   auraColorLow: {r: 0.57, g: 0.01, b: 0.01, a: 0.69803923}
   auraColorOverheat: {r: 0.4764151, g: 0.50721425, b: 1, a: 0.9}
+  auraColorDead: {r: 0, g: 0, b: 0, a: 0}
   auraColorBlendMult: 4
   animator: {fileID: 95538558876416898}
 --- !u!114 &114974186273360204

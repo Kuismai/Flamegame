@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287180068450044}
   - component: {fileID: 114181457674433538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

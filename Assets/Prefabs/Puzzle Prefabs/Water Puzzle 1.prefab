@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4900222110918346}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4887475987039902}
   - component: {fileID: 212328036185067432}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfLeftStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089947136966238}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 212824852220978638}
   - component: {fileID: 61728403483231428}
   - component: {fileID: 251196238519709096}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfBoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4641985147143604}
   - component: {fileID: 114985491346368272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4662160637553408}
   - component: {fileID: 212116082267767888}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfRightStrut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4923295957991886}
   - component: {fileID: 114335401537864636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 95483585979350710}
   m_Layer: 4
   m_Name: WaterPuddle
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 95985386631676754}
   m_Layer: 4
   m_Name: WaterPuddle (1)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 212339721636101552}
   - component: {fileID: 58719040823556852}
   - component: {fileID: 50760677635789238}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 212232816737338632}
   - component: {fileID: 58773058203430436}
   - component: {fileID: 50909705224312352}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166447243201356}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShelfWithAttachPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4963444089904022}
   - component: {fileID: 114444624833845428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 50496218203259270}
   - component: {fileID: 61385772561337962}
   - component: {fileID: 70884800670436112}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CageRigid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 212151587467453820}
   - component: {fileID: 58064723135113070}
   - component: {fileID: 50866617464645712}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4591195758902660}
   - component: {fileID: 114335545778607478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope_Adjustable (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 212863023676337540}
   - component: {fileID: 58989970041769862}
   - component: {fileID: 50805515258317946}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 212131515418988232}
   - component: {fileID: 58772191579795642}
   - component: {fileID: 50326377998092692}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rope Attach Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 95476626699308056}
   m_Layer: 4
   m_Name: WaterPuddle (2)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2717,14 +2717,14 @@ PlatformEffector2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071037706278002}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 220
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
