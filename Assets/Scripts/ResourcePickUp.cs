@@ -7,6 +7,8 @@ using UnityEngine;
 public class ResourcePickUp : MonoBehaviour
 {
     //private PlayerGPMechanics gpm;
+    private GameObject fireFlySound;
+    private AudioSource fYAudioSource;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +27,7 @@ public class ResourcePickUp : MonoBehaviour
                     PlayerGPMechanics.playerHealth += PlayerGPMechanics.pickUpGain;
                     gameObject.SetActive(false);
                     Debug.Log("Restored " + PlayerGPMechanics.pickUpGain + " health");
+                    AudioHandler();
                 }
                 
             }
@@ -34,6 +37,7 @@ public class ResourcePickUp : MonoBehaviour
                 PlayerGPMechanics.playerResource += PlayerGPMechanics.pickUpGain; // We add pickUpGain value to players resource pool and deactivate the pickup object on the level
                 gameObject.SetActive(false);
                 Debug.Log("Restored " + PlayerGPMechanics.pickUpGain + " resource");
+                AudioHandler();
             }
         }
     }
@@ -45,11 +49,44 @@ public class ResourcePickUp : MonoBehaviour
 
     void Start ()
     {
-		
-	}
+        fireFlySound = GameObject.Find("fireFlySound");
+        fYAudioSource = fireFlySound.GetComponent<AudioSource>();
+    }
 	
 	void Update ()
     {
-		
-	}
+        
+    }
+    private void AudioHandler()
+    {
+        if (!fYAudioSource.isPlaying)
+            fYAudioSource.Play();
+
+        else if (fYAudioSource.isPlaying)
+        {
+            GameObject clone;
+            AudioSource clonedSound;
+            clone = Instantiate(fireFlySound);
+            clonedSound = clone.GetComponent<AudioSource>();
+            clonedSound.Play();
+            if (clonedSound.isPlaying)
+            {
+                GameObject clone1;
+                AudioSource clonedSound1;
+                clone1 = Instantiate(fireFlySound);
+                clonedSound1 = clone.GetComponent<AudioSource>();
+                clonedSound1.Play();
+                //if (!clonedSound1.isPlaying)
+                  //  Object.Destroy(clone1, 0.0f);
+            }
+           /* else if (!fYAudioSource.isPlaying || !clonedSound.isPlaying)
+            {
+                Object.Destroy(clone, 0.0f);
+            }*/
+
+        }
+
+        else
+            return;
+    }
 }

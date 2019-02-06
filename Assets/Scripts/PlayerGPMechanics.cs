@@ -87,7 +87,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
 
     // SFX
-   
+
     private AudioSource overHeatOnSfx;
     private AudioSource overHeatStaticSfx;
     private AudioSource characterSoundSfx;
@@ -96,16 +96,17 @@ public class PlayerGPMechanics : MonoBehaviour
     private GameObject overHeatStatic;
     private GameObject characterStatic;
     private GameObject deathScreenSound;
+    private GameObject overHeatOn;
 
 
 
     //Animator stuff
     public Animator animator;
 
-     private void Start()
+    private void Start()
     {
         GetSounds();
-    } 
+    }
 
     void Awake()
     {
@@ -151,7 +152,7 @@ public class PlayerGPMechanics : MonoBehaviour
     {
         OverheatAudioHandler();
 
-        if (Input. GetButton("Fire3"))// Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
+        if (Input.GetButton("Fire3"))// Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
         {
             overheatActive = true;
         }
@@ -162,7 +163,7 @@ public class PlayerGPMechanics : MonoBehaviour
         }
 
         PauseHandler(); // Handles toggling of Pause
-        
+
         OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive (boolean)
 
         //PlayerLight(); // Handles light overlay changes, legacy code. Simply the worst.
@@ -313,7 +314,7 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             playerResource = startingResource;
         }
-        
+
         player.transform.position = CheckpointHandler.lastCheckpoint;
     }
 
@@ -322,7 +323,7 @@ public class PlayerGPMechanics : MonoBehaviour
         if (overheatActive)
         {
             overheatHitbox.SetActive(true);
-       
+
         }
 
         else if (!overheatActive)
@@ -399,8 +400,8 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             targetLightAlpha = 1f;
         }
-        
-        
+
+
         playerLight.color = Color.Lerp(playerLight.color, playerLightColor, Time.deltaTime * pLightBlendTime);
     }
 
@@ -491,12 +492,13 @@ public class PlayerGPMechanics : MonoBehaviour
     void GetSounds()
     {
         sounds = GameObject.Find("SFX");
+        overHeatOn = GameObject.Find("overHeatOn");
         overHeatStatic = GameObject.Find("overHeatStatic");
         characterStatic = GameObject.Find("characterSound");
         deathScreenSound = GameObject.Find("deathScreenSound");
 
 
-        overHeatOnSfx = sounds.transform.Find("overHeatOn").gameObject.GetComponent<AudioSource>();
+        overHeatOnSfx = overHeatOn.GetComponent<AudioSource>();
         overHeatStaticSfx = sounds.transform.Find("overHeatStatic").gameObject.GetComponent<AudioSource>();
         characterSoundSfx = sounds.transform.Find("characterSound").gameObject.GetComponent<AudioSource>();
         deathScreenSfx = sounds.transform.Find("deathScreenSound").gameObject.GetComponent<AudioSource>();
@@ -529,26 +531,42 @@ public class PlayerGPMechanics : MonoBehaviour
             deathScreenSound.SetActive(false);
 
             if (Input.GetButtonDown("Fire3"))   //if shift is pressed down the overheat activation sound is played    
-                overHeatOnSfx.Play();
+                if (!overHeatOnSfx.isPlaying)
+                    overHeatOnSfx.Play();
+                else if (overHeatOnSfx.isPlaying)
+                {
+                    GameObject clone;
+                    AudioSource clonedSound;
+                    clone = Instantiate(overHeatOn);
+                    clonedSound = clone.GetComponent<AudioSource>();
+                    clonedSound.Play();
+                    if (clonedSound.isPlaying)
+                    {
+                        GameObject clone1;
+                        AudioSource clonedSound1;
+                        clone1 = Instantiate(overHeatOn);
+                        clonedSound1 = clone.GetComponent<AudioSource>();
+                        clonedSound1.Play();
+                    }
+                }
 
             if (overheatActive) //switches the player static to the overheat static 
-            {
-                characterStatic.SetActive(false);
-                overHeatStatic.SetActive(true); // both of these are activated with the gameobject so it loops nicely.
-            }
+                    {
+                        characterStatic.SetActive(false);
+                        overHeatStatic.SetActive(true); // both of these are activated with the gameobject so it loops nicely.
+                    }
 
-            else if (!Input.GetButton("Fire3")) //if shift is not pressed, overheat-related sounds stop.
-            {
-                overHeatOnSfx.Stop();
-                overHeatStatic.SetActive(false);
-                characterStatic.SetActive(true);
-            }
+                    else if (!Input.GetButton("Fire3")) //if shift is not pressed, overheat-related sounds stop.
+                    {
+                        overHeatOnSfx.Stop();
+                        overHeatStatic.SetActive(false);
+                        characterStatic.SetActive(true);
+                    }
+                
+                else //just in case
+                    return;
+
         }
-        else //just in case
-            return;
-       
+
     }
-      
-
-
 }
