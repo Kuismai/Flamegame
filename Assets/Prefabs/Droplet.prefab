@@ -91,6 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropletDamage: 20
   overheatIgnoresDroplets: 1
+  damageHost: {fileID: 0}
+  damageSound: {fileID: 0}
+  waterDropLandingSound: {fileID: 0}
 --- !u!212 &212827714465762840
 SpriteRenderer:
   m_ObjectHideFlags: 1

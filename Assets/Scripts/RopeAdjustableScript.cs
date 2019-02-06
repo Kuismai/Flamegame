@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RopeScript : MonoBehaviour {
+public class RopeAdjustableScript : MonoBehaviour {
 
     public int ropeLength; // number of rope pieces
     public GameObject ropePiece;

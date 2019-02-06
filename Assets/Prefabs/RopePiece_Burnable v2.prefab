@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 50422537013997756}
   - component: {fileID: 61794513613267470}
   - component: {fileID: 233772398648212648}
-  - component: {fileID: 114094951549847610}
+  - component: {fileID: 114474802476326208}
   m_Layer: 9
   m_Name: RopePiece_Burnable v2
-  m_TagString: Untagged
+  m_TagString: Rope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4946380411445834}
   - component: {fileID: 198464674392870448}
   - component: {fileID: 199135243401179476}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: FlameParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4611799240223812}
   - component: {fileID: 198121620456418342}
   - component: {fileID: 199966100058958612}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SmokeParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4424528498889234}
   - component: {fileID: 58629804750024148}
-  m_Layer: 9
+  - component: {fileID: 114168201567327414}
+  m_Layer: 10
   m_Name: BurnHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106835164035606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.49, y: 1.85, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.1, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4424528498889234}
@@ -196,7 +197,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114094951549847610
+--- !u!114 &114168201567327414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928384203996024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e931399ffed6a447ab93b40bbae7d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114474802476326208
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,12 +216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1106835164035606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e931399ffed6a447ab93b40bbae7d09, type: 3}
+  m_Script: {fileID: 11500000, guid: e641fffc9ab34614e9460b23270077c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   burnTimerMax: 5
   onFireThreshold: 4.75
-  burnTimer: 0
+  burnTimer: 5
   isOnFire: 0
 --- !u!198 &198121620456418342
 ParticleSystem:
