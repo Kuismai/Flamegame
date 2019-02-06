@@ -37,13 +37,13 @@ public class PlayerGPMechanics : MonoBehaviour
     // Object references for UI and overheat hitbox
     public GameObject overheatHitbox;
     GameObject deathScreen;
-    GameObject pauseScreen;
+    //GameObject pauseScreen;
     public GameObject debugUI;
     public Text resourceUI;
     public Text healthUI;
     public Text alphaUI;
     public Text targetAlphaUI;
-    private bool paused = false;
+    //private bool paused = false;
 
     // Misc. helper variables
     private float drainTimer = 0;
@@ -114,8 +114,8 @@ public class PlayerGPMechanics : MonoBehaviour
         debugUI.SetActive(false);
         deathScreen = GameObject.Find("DeathScreenUI");
         deathScreen.SetActive(false);
-        pauseScreen = GameObject.Find("PauseMenuUI");
-        pauseScreen.SetActive(false);
+        //pauseScreen = GameObject.Find("PauseMenuUI");
+        //pauseScreen.SetActive(false);
         Cursor.visible = false;
 
         // Initialize Aura references
@@ -161,7 +161,7 @@ public class PlayerGPMechanics : MonoBehaviour
             overheatActive = false;
         }
 
-        PauseHandler(); // Handles toggling of Pause
+        //PauseHandler(); // Handles toggling of Pause
         
         OverheatFlipper(); // Enables & Disables Overheat hitbox depending on the value of overheatActive (boolean)
 
@@ -462,31 +462,31 @@ public class PlayerGPMechanics : MonoBehaviour
         playerAuraSprite.color = Color.Lerp(playerAuraSprite.color, auraTargetColor, Time.deltaTime * auraColorBlendMult);
     }
 
-    void PauseHandler()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!paused)
-            {
-                paused = true;
-                pauseScreen.SetActive(true);
-                Cursor.visible = true;
-                Time.timeScale = 0f;
-                // Play menu music
-                // do other stuff while paused
-            }
+    //void PauseHandler()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        if (!paused)
+    //        {
+    //            paused = true;
+    //            pauseScreen.SetActive(true);
+    //            Cursor.visible = true;
+    //            Time.timeScale = 0f;
+    //            // Play menu music
+    //            // do other stuff while paused
+    //        }
 
-            else if (paused)
-            {
-                paused = false;
-                pauseScreen.SetActive(false);
-                Cursor.visible = false;
-                Time.timeScale = 1f;
-                // We return to the land of the living
-            }
+    //        else if (paused)
+    //        {
+    //            paused = false;
+    //            pauseScreen.SetActive(false);
+    //            Cursor.visible = false;
+    //            Time.timeScale = 1f;
+    //            // We return to the land of the living
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     void GetSounds()
     {
