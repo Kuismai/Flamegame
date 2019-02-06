@@ -925,13 +925,15 @@ TextMesh:
     when you need it the most
 
 
-    Overheat will burn
+    Overheat will use up
 
-    fireflies when available;
+    firefly energy first
 
-    this is far more efficient than
+    and far more efficient
 
-    burning your health directly'
+    than burning your
+
+    health away'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1560,19 +1562,22 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 414034842}
-  m_Text: 'Lighting a candle will
+  m_Text: 'While on a lit
 
-    set it as your respawn point.
+    candle your health
 
+    will regenerate and
 
-    Lit candles will also
+    you''ll set your
 
-    regenerate your health.'
+    respawn to that
+
+    candle'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 16
   m_FontStyle: 0
@@ -2364,8 +2369,8 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 804741952}
-  m_Text: "Hold <Shift> \nto Overheat\n\nYour health will decay\nfaster during overheat,\nbut
-    you can set certain\nobjects ablaze"
+  m_Text: "Hold <Shift> \nto Overheat\n\nYour health will\ndecay fast but\nyou can
+    set certain\nobjects ablaze"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -3119,19 +3124,19 @@ TextMesh:
   m_Text: 'Avoid touching water
 
 
-    Being hit by a droplet will
+    Droplets will lose you
 
-    cost you some of your health
+    a good portion of your life
 
 
     Touching puddles of water
 
-    will put you out instantly'
+    will straight out put you out'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 16
   m_FontStyle: 0
@@ -4497,7 +4502,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1403706213}
-  m_Text: "Light candles to \nactivate checkpoints"
+  m_Text: "Light up candles to \nunlock checkpoints"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -5461,7 +5466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1806018798235170, guid: 6a6e600c684ec6648b363056c89e6b41, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1765151941118256, guid: 6a6e600c684ec6648b363056c89e6b41, type: 2}
       propertyPath: m_IsActive
