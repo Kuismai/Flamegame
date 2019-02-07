@@ -7,6 +7,7 @@ public class Bonfire : MonoBehaviour
     public bool isLit = false;
     private GameObject updraftBox;
     private SpriteRenderer[] flames;
+    public Sprite mySprite;
 
     void Start()
     {
@@ -38,6 +39,9 @@ public class Bonfire : MonoBehaviour
                 {
                     flames[i].enabled = true;
                 }
+
+                //Change sprite:
+                this.GetComponent<SpriteRenderer>().sprite = mySprite;
             }
         }
     }

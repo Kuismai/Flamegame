@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
+  mySprite: {fileID: 21300008, guid: 57754b71d2123ed4e80cdd3ab529a5bf, type: 3}
 --- !u!114 &114195871373833684
 MonoBehaviour:
   m_ObjectHideFlags: 1

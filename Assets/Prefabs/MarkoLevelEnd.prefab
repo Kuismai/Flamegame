@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4329174240296354}
   - component: {fileID: 212490877769907342}
   m_Layer: 0
-  m_Name: LevelEnd
+  m_Name: MarkoLevelEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
