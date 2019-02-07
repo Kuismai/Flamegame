@@ -1666,20 +1666,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &671265393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1809654331684714, guid: 0b561a2543158493c8a19a71e3e881a0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1856242746}
---- !u!165 &671265397
-AudioHighPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 671265393}
-  m_Enabled: 1
-  m_CutoffFrequency: 4500
-  m_HighpassResonanceQ: 1
 --- !u!1 &707151402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +4812,11 @@ Prefab:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224022668957848972, guid: 6a6e600c684ec6648b363056c89e6b41,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81571639529005594, guid: 6a6e600c684ec6648b363056c89e6b41, type: 2}
     - {fileID: 170885765532218964, guid: 6a6e600c684ec6648b363056c89e6b41, type: 2}
@@ -4992,11 +4983,6 @@ Prefab:
     - target: {fileID: 4911207777756386, guid: 0b561a2543158493c8a19a71e3e881a0, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114223283424073878, guid: 0b561a2543158493c8a19a71e3e881a0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b561a2543158493c8a19a71e3e881a0, type: 2}
