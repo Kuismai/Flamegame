@@ -6,6 +6,6 @@ public class DestroyClones : MonoBehaviour {
 
 	void Update () { 
             if (gameObject.name != "fireFlySound")
-                Destroy(this.gameObject, 1.0f);
+                Destroy(this.gameObject, 0.0f);
     }
 }
