@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 114442462147323772}
   - component: {fileID: 114357617650410368}
   m_Layer: 5
-  m_Name: UI
+  m_Name: UILegacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
