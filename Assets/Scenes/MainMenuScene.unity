@@ -150,8 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d61f0a239552c94b89b3025a3f310f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 382056361}
-  pauseMenuPanel: {fileID: 408762415}
+  mainPanel: {fileID: 382056361}
+  settingsPanel: {fileID: 92887824}
+  creditsPanel: {fileID: 392778828}
+  pausePanel: {fileID: 408762415}
+  confirmationPanel: {fileID: 1579733001}
   musicMixer: {fileID: 24100000, guid: 57d114fcd41a3c143b681a111fe67c7f, type: 2}
   sfxMixer: {fileID: 24100000, guid: d8970b0573eea1f43b7f4057bb9c907e, type: 2}
 --- !u!4 &145942459
@@ -319,7 +322,7 @@ Prefab:
     - target: {fileID: 224705404080613918, guid: 9371484f553480d4c8462163db4d84bc,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224705404080613918, guid: 9371484f553480d4c8462163db4d84bc,
         type: 2}
@@ -1109,8 +1112,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 382056362}
-  - {fileID: 392778829}
   - {fileID: 92887825}
+  - {fileID: 392778829}
   - {fileID: 408762416}
   - {fileID: 1579733002}
   m_Father: {fileID: 1781937909}
@@ -1438,7 +1441,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781937907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.112584, y: -6.702138, z: 0.42897648}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 145942459}
@@ -1814,7 +1817,7 @@ Prefab:
     - target: {fileID: 224201447168446110, guid: 438c531a92fc7c54ba1338d5bab680b6,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224201447168446110, guid: 438c531a92fc7c54ba1338d5bab680b6,
         type: 2}

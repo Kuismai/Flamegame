@@ -8,25 +8,55 @@ using UnityEngine.SceneManagement;
 public class MenuHandler : MonoBehaviour {
 
     //Menu stuff:
-    public GameObject mainMenuPanel, pauseMenuPanel;
+    public GameObject mainPanel, settingsPanel, creditsPanel, pausePanel, confirmationPanel;
     private bool isGamePaused = false;
 
     //Audio stuff:
     public AudioMixer musicMixer, sfxMixer;
     private float musicVol, sfxVol;
 
+    private int activeScene;
+
     // Use this for initialization
     void Start () {
+
+        //Set up audio sliders:
+        settingsPanel.SetActive(true);
         musicVol = GameObject.Find("Music Slider").GetComponent<Slider>().value;
         sfxVol = GameObject.Find("SFX Slider").GetComponent<Slider>().value;
+        settingsPanel.SetActive(false);
+
+        activeScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
     {
-        //Pause Game when in game:
-        if(SceneManager.GetActiveScene().buildIndex != 0)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isGamePaused && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)))
+            activeScene = SceneManager.GetActiveScene().buildIndex;
+
+            if (activeScene == 0)
+            {
+                GoToPreviousMenu();
+            }
+            else if (activeScene != 0)
+            {
+                if(!isGamePaused)
+                {
+                    PauseGame();
+                }
+                else
+                {
+                    GoToPreviousMenu();
+                }
+            }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            activeScene = SceneManager.GetActiveScene().buildIndex;
+
+            if (!isGamePaused && activeScene != 0)
             {
                 PauseGame();
             }
@@ -46,18 +76,51 @@ public class MenuHandler : MonoBehaviour {
     // Used for correct menu panel displaying:
     public void BackButtonPress()
     {
-        int activeScene = SceneManager.GetActiveScene().buildIndex;
+        activeScene = SceneManager.GetActiveScene().buildIndex;
         if(activeScene == 0) //In Main Menu
         {
-            // Open Main Menu Panel:
-            mainMenuPanel.SetActive(true);
+            mainPanel.SetActive(true);
 
         }
         else //In Game
         {
             // Open Pause Menu Panel:
-            pauseMenuPanel.SetActive(true);
+            pausePanel.SetActive(true);
         }
+    }
+
+    public void GoToPreviousMenu()
+    {
+        activeScene = SceneManager.GetActiveScene().buildIndex;
+
+        if (activeScene == 0)
+        {
+            if (mainPanel.activeInHierarchy)
+            {
+                mainPanel.SetActive(false);
+                confirmationPanel.SetActive(true);
+            }
+            else if (settingsPanel.activeInHierarchy || creditsPanel.activeInHierarchy || confirmationPanel.activeInHierarchy)
+            {
+                settingsPanel.SetActive(false);
+                creditsPanel.SetActive(false);
+                confirmationPanel.SetActive(false);
+                mainPanel.SetActive(true);
+            }
+        }
+        else if (activeScene != 0)
+        {
+            if (settingsPanel.activeInHierarchy)
+            {
+                settingsPanel.SetActive(false);
+                pausePanel.SetActive(true);
+            }
+            else if (pausePanel.activeInHierarchy)
+            {
+                pausePanel.SetActive(false);
+                ResumeGame();
+            }
+        } 
     }
 
     public void PauseGame()
@@ -65,7 +128,7 @@ public class MenuHandler : MonoBehaviour {
         Debug.Log("Game Paused");
         isGamePaused = true;
         Time.timeScale = 0.0f;
-        pauseMenuPanel.SetActive(true);
+        pausePanel.SetActive(true);
     }
 
     public void ResumeGame()
