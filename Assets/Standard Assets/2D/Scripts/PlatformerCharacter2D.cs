@@ -33,8 +33,8 @@ namespace UnityStandardAssets._2D
         //public float jumpAnimStaller = 0.5f;
 
 
-        private GameObject jumpObject;
-        private AudioSource jumpObjectSound;
+        //private GameObject jumpObject;
+        //private AudioSource jumpObjectSound;
 
         private void Start()
         {

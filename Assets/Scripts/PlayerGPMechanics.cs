@@ -542,7 +542,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
         else if (playerAlive)//i.e if the player is alive
         {
-            deathScreenSound.SetActive(false);
+            //deathScreenSound.SetActive(false);
 
             if (Input.GetButtonDown("Fire3"))   //if shift is pressed down the overheat activation sound is played    
                 if (!overHeatOnSfx.isPlaying)
