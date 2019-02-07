@@ -438,6 +438,7 @@ public class PlayerGPMechanics : MonoBehaviour
             {
                 auraTargetColor = auraColorFull;
                 animator.SetLayerWeight(0, 1);
+                animator.SetLayerWeight(2, 0);
             }
 
             else if (playerHealth >= midHP && playerHealth < highHP && !overheatActive)
