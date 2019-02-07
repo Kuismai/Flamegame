@@ -51,7 +51,6 @@ public class MenuHandler : MonoBehaviour {
                 }
             }
         }
-
         else if (Input.GetKeyDown(KeyCode.P))
         {
             activeScene = SceneManager.GetActiveScene().buildIndex;
@@ -66,8 +65,7 @@ public class MenuHandler : MonoBehaviour {
     // Loads a new scene:
     public void LoadScene(int sceneNumber)
     {
-
-        Debug.Log("Loading scene " + sceneNumber + "...");
+        //Debug.Log("Loading scene " + sceneNumber + "...");
         isGamePaused = false;
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(sceneNumber);
@@ -77,12 +75,12 @@ public class MenuHandler : MonoBehaviour {
     public void BackButtonPress()
     {
         activeScene = SceneManager.GetActiveScene().buildIndex;
-        if(activeScene == 0) //In Main Menu
+        if(activeScene == 0) // In Main Menu:
         {
             mainPanel.SetActive(true);
 
         }
-        else //In Game
+        else if (activeScene != 0) // In Game:
         {
             // Open Pause Menu Panel:
             pausePanel.SetActive(true);
@@ -100,6 +98,11 @@ public class MenuHandler : MonoBehaviour {
                 mainPanel.SetActive(false);
                 confirmationPanel.SetActive(true);
             }
+            else if (!mainPanel.activeInHierarchy && !settingsPanel.activeInHierarchy && !creditsPanel.activeInHierarchy && !pausePanel.activeInHierarchy && !confirmationPanel.activeInHierarchy)
+            {
+                mainPanel.SetActive(true);
+            }
+
             else if (settingsPanel.activeInHierarchy || creditsPanel.activeInHierarchy || confirmationPanel.activeInHierarchy)
             {
                 settingsPanel.SetActive(false);
@@ -125,7 +128,7 @@ public class MenuHandler : MonoBehaviour {
 
     public void PauseGame()
     {
-        Debug.Log("Game Paused");
+        //Debug.Log("Game Paused");
         isGamePaused = true;
         Time.timeScale = 0.0f;
         pausePanel.SetActive(true);
@@ -133,16 +136,15 @@ public class MenuHandler : MonoBehaviour {
 
     public void ResumeGame()
     {
-        Debug.Log("Resuming Game...");
+        //Debug.Log("Resuming Game...");
         isGamePaused = false;
         Time.timeScale = 1.0f;
     }
 
     public void QuitGame()
     {
-        Debug.Log("Exiting game...");
+        //Debug.Log("Exiting game...");
         Application.Quit();
-
     }
 
     //********** AUDIO SETTINGS STUFF **********//
@@ -151,7 +153,7 @@ public class MenuHandler : MonoBehaviour {
     public void changeMasterVolume(float newVolume)
     {
         AudioListener.volume = newVolume;
-        Debug.Log(AudioListener.volume);
+        //Debug.Log(AudioListener.volume);
     }
 
     // Change music volume (note: parameter must be exposed):
