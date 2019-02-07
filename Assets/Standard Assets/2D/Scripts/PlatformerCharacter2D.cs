@@ -34,12 +34,12 @@ namespace UnityStandardAssets._2D
 
 
         private GameObject jumpObject;
-        private AudioSource jumpObjectSound;
+        //private AudioSource jumpObjectSound;
 
         private void Start()
         {
-            jumpObject = GameObject.Find("jumpSound");
-            jumpObjectSound = jumpObject.GetComponent<AudioSource>();
+            //jumpObject = GameObject.Find("jumpSound");
+            //jumpObjectSound = jumpObject.GetComponent<AudioSource>();
         }
 
         private void Awake()
@@ -172,28 +172,28 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * initialJump)); // , ForceMode2D.Impulse
 
                 animator.SetTrigger("IsJumping");
-                if (!jumpObjectSound.isPlaying)
-                {
-                    jumpObjectSound.Play();
-                }
-                else if (jumpObjectSound.isPlaying)
-                {
-                    {
-                        /*GameObject clone;
-                        AudioSource clonedSound;
-                        clone = Instantiate(jumpObject);
-                        clonedSound = clone.GetComponent<AudioSource>();
-                        clonedSound.Play();
-                        if (clonedSound.isPlaying)
-                        {
-                            GameObject clone1;
-                            AudioSource clonedSound1;
-                            clone1 = Instantiate(jumpObject);
-                            clonedSound1 = clone.GetComponent<AudioSource>();
-                            clonedSound1.Play();
-                        } */
-                    }
-                }
+                //if (!jumpObjectSound.isPlaying)
+                //{
+                //    jumpObjectSound.Play();
+                //}
+                //else if (jumpObjectSound.isPlaying)
+                //{
+                //    {
+                //        /*GameObject clone;
+                //        AudioSource clonedSound;
+                //        clone = Instantiate(jumpObject);
+                //        clonedSound = clone.GetComponent<AudioSource>();
+                //        clonedSound.Play();
+                //        if (clonedSound.isPlaying)
+                //        {
+                //            GameObject clone1;
+                //            AudioSource clonedSound1;
+                //            clone1 = Instantiate(jumpObject);
+                //            clonedSound1 = clone.GetComponent<AudioSource>();
+                //            clonedSound1.Play();
+                //        } */
+                //    }
+                //}
             }
 
             if (jump && jumpTimer > 0)
