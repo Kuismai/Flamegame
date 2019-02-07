@@ -6113,7 +6113,7 @@ MonoBehaviour:
   overheatRegenMult: 0
   decayHealthInOverheat: 0
   setPickUpGain: 10
-  updraftVelocity: 100
+  updraftVelocity: 150
   overheatHitbox: {fileID: 1785124239774396}
   debugUI: {fileID: 0}
   resourceUI: {fileID: 114886357439950110}
