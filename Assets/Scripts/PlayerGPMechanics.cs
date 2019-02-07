@@ -150,6 +150,8 @@ public class PlayerGPMechanics : MonoBehaviour
 
     void Update()
     {
+        if (playerDead)
+            deathScreenSfx.Play();
         OverheatAudioHandler();
 
         if (Input.GetButton("Fire3"))// Here we're "listening" if the player activates Overheat. Press and keep <Shift> down to keep Overheat active
@@ -515,12 +517,12 @@ public class PlayerGPMechanics : MonoBehaviour
         overHeatOnSfx = overHeatOn.GetComponent<AudioSource>();
         overHeatStaticSfx = sounds.transform.Find("overHeatStatic").gameObject.GetComponent<AudioSource>();
         characterSoundSfx = sounds.transform.Find("characterSound").gameObject.GetComponent<AudioSource>();
-        deathScreenSfx = sounds.transform.Find("deathScreenSound").gameObject.GetComponent<AudioSource>();
+        deathScreenSfx = deathScreenSound.GetComponent<AudioSource>();
 
 
         overHeatStatic.SetActive(false);
         characterStatic.SetActive(true);
-        deathScreenSound.SetActive(false);
+        // deathScreenSound.SetActive(false);
     }
 
     void OverheatAudioHandler()
@@ -530,8 +532,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
         if (!playerAlive)
         {
-            //deathScreenSfx.Play();
-            deathScreenSound.SetActive(true); //the sound plays on awake and this method is somehow less laggy 
+            // deathScreenSound.SetActive(true); //the sound plays on awake and this method is somehow less laggy 
             overHeatOnSfx.Stop();
             overHeatStaticSfx.Stop();
             characterSoundSfx.Stop();
