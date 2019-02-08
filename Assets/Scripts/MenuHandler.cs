@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuHandler : MonoBehaviour {
-
+    public AudioSource clickSound;
     //Menu stuff:
     public GameObject mainPanel, settingsPanel, creditsPanel, pausePanel, confirmationPanel, bgTintPanel;
     private bool isGamePaused = false;
@@ -37,16 +37,19 @@ public class MenuHandler : MonoBehaviour {
 
             if (activeScene == 0)
             {
+                clickSound.Play();
                 GoToPreviousMenu();
             }
             else if (activeScene != 0)
             {
                 if(!isGamePaused)
                 {
+                    clickSound.Play();
                     PauseGame();
                 }
                 else
                 {
+                    clickSound.Play();
                     GoToPreviousMenu();
                 }
             }
@@ -57,6 +60,7 @@ public class MenuHandler : MonoBehaviour {
 
             if (!isGamePaused && activeScene != 0)
             {
+                clickSound.Play();
                 PauseGame();
             }
         }

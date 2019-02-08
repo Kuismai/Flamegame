@@ -111,13 +111,13 @@ public class PlayerGPMechanics : MonoBehaviour
     void Awake()
     {
         // Initialize UI
-        debugUI = GameObject.Find("DebugUI");
-        debugUI.SetActive(false);
+        //debugUI = GameObject.Find("DebugUI");
+        //debugUI.SetActive(false);
         deathScreen = GameObject.Find("DeathScreenUI");
         deathScreen.SetActive(false);
         //pauseScreen = GameObject.Find("PauseMenuUI");
         //pauseScreen.SetActive(false);
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
         // Initialize Aura references
         playerAura = GameObject.Find("Aura");
@@ -172,7 +172,7 @@ public class PlayerGPMechanics : MonoBehaviour
 
         PlayerLightLerp(); // New version of light handler, uses Lerp.
 
-        DebugUI(); // Handles Debug UI
+        //DebugUI(); // Handles Debug UI
 
     }
 
@@ -262,7 +262,7 @@ public class PlayerGPMechanics : MonoBehaviour
         {
             deathScreen.SetActive(true);
             //Time.timeScale = 0.25f;
-            Debug.Log("You're dead dawg");
+            //Debug.Log("You're dead dawg");
 
             if (deathScreenTimer >= deathScreenDelay)
             {
@@ -292,7 +292,7 @@ public class PlayerGPMechanics : MonoBehaviour
         if (collision.gameObject.tag == "RefuelZone")
         {
             atSafeZone = true;
-            Debug.Log("Entered Safe Zone");
+            //Debug.Log("Entered Safe Zone");
         }
     }
 
@@ -301,7 +301,7 @@ public class PlayerGPMechanics : MonoBehaviour
         if (collision.gameObject.tag == "RefuelZone")
         {
             atSafeZone = false;
-            Debug.Log("Left Safe Zone");
+            //Debug.Log("Left Safe Zone");
         }
     }
 
@@ -407,30 +407,30 @@ public class PlayerGPMechanics : MonoBehaviour
         playerLight.color = Color.Lerp(playerLight.color, playerLightColor, Time.deltaTime * pLightBlendTime);
     }
 
-    public void DebugUI()
-    {
-        resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Resource value
-        healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth); // Updating UI for Health value
-        alphaUI.text = "Light alpha: " + playerLightColor.a; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show value of light overlay Alpha
-        targetAlphaUI.text = "Target alpha: " + targetLightAlpha; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show what the value of Alpha should be
+    //public void DebugUI()
+    //{
+    //    resourceUI.text = "Resource: " + Mathf.RoundToInt(playerResource); // Updating UI for Resource value
+    //    healthUI.text = "HP: " + Mathf.RoundToInt(playerHealth); // Updating UI for Health value
+    //    alphaUI.text = "Light alpha: " + playerLightColor.a; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show value of light overlay Alpha
+    //    targetAlphaUI.text = "Target alpha: " + targetLightAlpha; //Mathf.RoundToInt(playerLightColor.a); Updating UI to show what the value of Alpha should be
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            if (!debugShow)
-            {
-                debugShow = true;
-                debugUI.SetActive(true);
-                Cursor.visible = true;
-            }
+    //    if (Input.GetButtonDown("Fire2"))
+    //    {
+    //        if (!debugShow)
+    //        {
+    //            debugShow = true;
+    //            debugUI.SetActive(true);
+    //            //Cursor.visible = true;
+    //        }
 
-            else if (debugShow)
-            {
-                debugShow = false;
-                debugUI.SetActive(false);
-                Cursor.visible = false;
-            }
-        }
-    }
+    //        else if (debugShow)
+    //        {
+    //            debugShow = false;
+    //            debugUI.SetActive(false);
+    //            //Cursor.visible = false;
+    //        }
+    //    }
+    //}
 
     void AuraHandler()
     {

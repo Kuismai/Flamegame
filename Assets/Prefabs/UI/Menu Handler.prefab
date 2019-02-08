@@ -51,10 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d61f0a239552c94b89b3025a3f310f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
   mainPanel: {fileID: 0}
   settingsPanel: {fileID: 0}
   creditsPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   confirmationPanel: {fileID: 0}
+  bgTintPanel: {fileID: 0}
   musicMixer: {fileID: 24100000, guid: 57d114fcd41a3c143b681a111fe67c7f, type: 2}
   sfxMixer: {fileID: 24100000, guid: d8970b0573eea1f43b7f4057bb9c907e, type: 2}
