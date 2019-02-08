@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 public class MenuHandler : MonoBehaviour {
 
     //Menu stuff:
-    public GameObject mainPanel, settingsPanel, creditsPanel, pausePanel, confirmationPanel;
+    public GameObject mainPanel, settingsPanel, creditsPanel, pausePanel, confirmationPanel, bgTintPanel;
     private bool isGamePaused = false;
 
     //Audio stuff:
     public AudioMixer musicMixer, sfxMixer;
-    private float musicVol, sfxVol;
+    //private float musicVol, sfxVol;
 
     private int activeScene;
 
@@ -21,10 +21,10 @@ public class MenuHandler : MonoBehaviour {
     void Start () {
 
         //Set up audio sliders:
-        settingsPanel.SetActive(true);
-        musicVol = GameObject.Find("Music Slider").GetComponent<Slider>().value;
-        sfxVol = GameObject.Find("SFX Slider").GetComponent<Slider>().value;
-        settingsPanel.SetActive(false);
+        //settingsPanel.SetActive(true);
+        //musicVol = GameObject.Find("Music Slider").GetComponent<Slider>().value;
+        //sfxVol = GameObject.Find("SFX Slider").GetComponent<Slider>().value;
+        //settingsPanel.SetActive(false);
 
         activeScene = SceneManager.GetActiveScene().buildIndex;
     }
@@ -65,7 +65,6 @@ public class MenuHandler : MonoBehaviour {
     // Loads a new scene:
     public void LoadScene(int sceneNumber)
     {
-        //Debug.Log("Loading scene " + sceneNumber + "...");
         isGamePaused = false;
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(sceneNumber);
@@ -77,12 +76,14 @@ public class MenuHandler : MonoBehaviour {
         activeScene = SceneManager.GetActiveScene().buildIndex;
         if(activeScene == 0) // In Main Menu:
         {
+            bgTintPanel.SetActive(true);
             mainPanel.SetActive(true);
 
         }
         else if (activeScene != 0) // In Game:
         {
             // Open Pause Menu Panel:
+            bgTintPanel.SetActive(true);
             pausePanel.SetActive(true);
         }
     }
@@ -100,6 +101,7 @@ public class MenuHandler : MonoBehaviour {
             }
             else if (!mainPanel.activeInHierarchy && !settingsPanel.activeInHierarchy && !creditsPanel.activeInHierarchy && !pausePanel.activeInHierarchy && !confirmationPanel.activeInHierarchy)
             {
+                bgTintPanel.SetActive(true);
                 mainPanel.SetActive(true);
             }
 
@@ -120,6 +122,7 @@ public class MenuHandler : MonoBehaviour {
             }
             else if (pausePanel.activeInHierarchy)
             {
+                bgTintPanel.SetActive(false);
                 pausePanel.SetActive(false);
                 ResumeGame();
             }
@@ -128,22 +131,22 @@ public class MenuHandler : MonoBehaviour {
 
     public void PauseGame()
     {
-        //Debug.Log("Game Paused");
         isGamePaused = true;
-        Time.timeScale = 0.0f;
+        bgTintPanel.SetActive(true);
         pausePanel.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
     public void ResumeGame()
     {
-        //Debug.Log("Resuming Game...");
         isGamePaused = false;
+        bgTintPanel.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
     public void QuitGame()
     {
-        //Debug.Log("Exiting game...");
         Application.Quit();
     }
 
@@ -153,20 +156,17 @@ public class MenuHandler : MonoBehaviour {
     public void changeMasterVolume(float newVolume)
     {
         AudioListener.volume = newVolume;
-        //Debug.Log(AudioListener.volume);
     }
 
     // Change music volume (note: parameter must be exposed):
     public void changeMusicVolume(float newVolume)
     {
         musicMixer.SetFloat("masterVolMusic", newVolume);
-        //Debug.Log(musicVol);
     }
 
     // Change sfx volume (note: parameter must be exposed):
     public void changeSFXVolume(float newVolume)
     {
-        musicMixer.SetFloat("masterVolSFX", newVolume);
-        //Debug.Log(sfxVol);
+        sfxMixer.SetFloat("masterVolSFX", newVolume);
     }
 }
